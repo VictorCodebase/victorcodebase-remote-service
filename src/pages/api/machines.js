@@ -2,7 +2,6 @@
 import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
-const MACHINES_KEY = "machines";
 
 async function getMachines() {
 	const data = await redis.get(MACHINES_KEY);

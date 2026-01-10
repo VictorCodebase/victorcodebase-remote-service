@@ -1,0 +1,61 @@
+[
+	{
+		"id": "budget-audit",
+		"name": "Budget Audit",
+		"version": "v1.0.0 (Coming Soon)",
+		"description": "A comprehensive budgeting platform designed for personal and group finance tracking. It focuses on the 'Audit' aspect—helping users understand exactly where their money went. Features include budget templates, category tracking, and financial statement extraction to match daily transactions against budgeted accounts.",
+		"status": "upcoming",
+		"platforms": [
+			{ "name": "Windows", "release_date": "Mid-Feb 2026", "link": null },
+			{ "name": "macOS", "release_date": "Q1 2026", "link": null },
+			{ "name": "iOS", "release_date": "Q1 2026", "link": null }
+		],
+		"links": {
+			"documentation": "/docs/budget-audit",
+			"repository": "#"
+		},
+		"images": {
+			"logo": "/images/budget-audit-logo.png",
+			"cover": "/images/budget-audit-cover.png"
+		}
+	},
+	{
+		"id": "activity-logger",
+		"name": "Daily Activity Logger",
+		"version": "v2.2.1",
+		"description": "Built to simplify daily task tracking and monthly work report generation. Originally developed during an industrial attachment to streamline workflow, it allows users to log tasks effortlessly and generate compiled reports for supervisors.",
+		"status": "released",
+		"platforms": [
+			{
+				"name": "Android",
+				"release_date": "Released",
+				"link": "https://github.com/VictorCodebase/daily-logger/releases/download/v2.2.1/application-95fcc93d-d6a3-4fc8-a698-2d08b3785991.apk"
+			}
+		],
+		"links": {
+			"documentation": "https://github.com/VictorCodebase/daily-logger/releases/tag/2.2.1",
+			"article": "https://www.linkedin.com/pulse/how-i-built-internal-tool-during-my-industrial-now-loves-kithinji-ieltf",
+			"repository": "https://github.com/VictorCodebase/daily-logger"
+		},
+		"images": {
+			"logo": "/images/logger-logo.png",
+			"cover": "/images/logger-cover.png"
+		}
+	},
+	{
+		"id": "multiviewer",
+		"name": "Multiviewer",
+		"version": "Beta",
+		"description": "A local network media server solution. It allows a 'parent' computer to expose a directory of films to any device on the network. Features peer-to-peer control capabilities, allowing permitted clients to take control of the playback on the server. Ideal for local movie nights and synchronized viewing.",
+		"status": "upcoming",
+		"platforms": [{ "name": "All Platforms", "release_date": "Mid-2026", "link": null }],
+		"links": {
+			"documentation": "#",
+			"repository": "#"
+		},
+		"images": {
+			"logo": "/images/multiviewer-logo.png",
+			"cover": "/images/multiviewer-cover.png"
+		}
+	}
+]
