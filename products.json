@@ -3,12 +3,30 @@
 		"id": "budget-audit",
 		"name": "Budget Audit",
 		"version": "v1.0.0 (Coming Soon)",
-		"description": "A comprehensive budgeting platform designed for personal and group finance tracking. It focuses on the 'Audit' aspect—helping users understand exactly where their money went. Features include budget templates, category tracking, and financial statement extraction to match daily transactions against budgeted accounts.",
+		"description": "A budgeting platform that offers you the opportunity to keep track of your expenditure too. This should help you observe trends in your expenditure that would not have been obvious, on top of budgeting capabilities",
 		"status": "upcoming",
 		"platforms": [
-			{ "name": "Windows", "release_date": "Mid-Feb 2026", "link": null },
-			{ "name": "macOS", "release_date": "Q1 2026", "link": null },
-			{ "name": "iOS", "release_date": "Q1 2026", "link": null }
+			{ "name": "Windows", "release_date": "24 Jan 2026", "link": null },
+			{ "name": "macOS", "release_date": "Q2 2026", "link": null },
+			{ "name": "iOS", "release_date": "Q2 2026", "link": null }
+		],
+		"links": {
+			"documentation": "/docs/budget-audit",
+			"repository": "#"
+		},
+		"images": {
+			"logo": "/images/budget-audit-logo-update.png",
+			"cover": "/images/budget-audit-cover.png"
+		}
+	},
+	{
+		"id": "budget-audit-multidevice",
+		"name": "Budget Audit Multidevice Support",
+		"version": "Prod",
+		"description": "A budgeting platform with multi-device support that offers you the opportunity to keep track of your expenditure too. This should help you observe trends in your expenditure that would not have been obvious, on top of budgeting capabilities",
+		"status": "upcoming",
+		"platforms": [
+		
 		],
 		"links": {
 			"documentation": "/docs/budget-audit",
@@ -38,8 +56,8 @@
 			"repository": "https://github.com/VictorCodebase/daily-logger"
 		},
 		"images": {
-			"logo": "/images/logger-logo.png",
-			"cover": "/images/logger-cover.png"
+			"logo": "/images/daily-logger-logo.png",
+			"cover": "/images/daily-logger-banner.png"
 		}
 	},
 	{
@@ -54,8 +72,8 @@
 			"repository": "#"
 		},
 		"images": {
-			"logo": "/images/multiviewer-logo.png",
-			"cover": "/images/multiviewer-cover.png"
+			"logo": "/images/blank-image.png",
+			"cover": "/images/blank-image.png"
 		}
 	}
 ]
