@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image"
 import { useState, useEffect } from "react";
 
 export default function BudgetAuditDocs() {
@@ -72,12 +73,18 @@ export default function BudgetAuditDocs() {
 					<div className="space-y-4">
 						<h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Getting Started with Budget Audit</h1>
 						<p className="text-lg text-gray-600 leading-relaxed">
-							Welcome to the official documentation. Budget Audit focuses on the "Audit" aspect of finance—helping you
-							understand exactly where your money went by matching daily transactions against your budgeted accounts.
+							Welcome to Budget Audit! <br/>
+                            This documentation should get you started on all you need to start managing your finances better.
+                            
 						</p>
 						{/* Screenshot Placeholder */}
-						<div className="w-full h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500">
-							[Screenshot: Dashboard / Home Screen]
+						<div className="relative w-full h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
+							<Image
+								src="/budget-audit/documentation-banner.png"
+								alt="Budget Audit documentation banner"
+								fill
+								className="object-cover rounded-lg p-2"
+							/>
 						</div>
 					</div>
 
@@ -226,8 +233,13 @@ export default function BudgetAuditDocs() {
 							</div>
 
 							{/* Screenshot Placeholder */}
-							<div className="w-full h-48 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
-								[Screenshot: Transaction Labelling Interface]
+							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+								<Image
+                                src='/budget-audit/extracted-widget.png'
+                                alt='transaction labelling device intervention'
+                                fill
+                                className='object-cover p-2'
+                                />
 							</div>
 
 							<div className="text-sm text-gray-600 bg-gray-100 p-4 rounded-lg">
