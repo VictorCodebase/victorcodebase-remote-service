@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image"
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function BudgetAuditDocs() {
@@ -73,9 +73,8 @@ export default function BudgetAuditDocs() {
 					<div className="space-y-4">
 						<h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Getting Started with Budget Audit</h1>
 						<p className="text-lg text-gray-600 leading-relaxed">
-							Welcome to Budget Audit! <br/>
-                            This documentation should get you started on all you need to start managing your finances better.
-                            
+							Welcome to Budget Audit! <br />
+							This documentation should get you started on all you need to start managing your finances better.
 						</p>
 						{/* Screenshot Placeholder */}
 						<div className="relative w-full h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
@@ -149,6 +148,38 @@ export default function BudgetAuditDocs() {
 									</li>
 								</ul>
 							</div>
+
+							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+								<div className="relative w-full h-90">
+									<Image
+										src="/budget-audit/manual-bgt-1.png"
+										alt="transaction labelling device intervention"
+										fill
+										className="object-cover p-2"
+									/>
+								</div>
+								<div className="relative w-full h-90">
+									<Image
+										src="/budget-audit/manual-bgt-2.png"
+										alt="transaction labelling device intervention"
+										fill
+										className="object-contain p-2"
+									/>
+								</div>
+							</div>
+							<p>
+								You can only save your budget if all the creation rules are satisfied. A yellow banner below the
+								budgets will always inform you of what is missing in your budget. <br />{" "}
+								<strong>Pro Tip:</strong> Always collapse categories after completing them! <br />
+								<span className="text-gray-500 text-sm">
+									{" "}
+									| Minimizing a categroy will show you an{" "}
+									<span className="text-gray-500 text-sm">
+										<i>'incomplete'</i>{" "}
+									</span>
+									tag if any account within it is incomplete. As such, closing the categories will always ensure you dont miss anything |{" "}
+								</span>
+							</p>
 						</div>
 
 						<div className="grid md:grid-cols-2 gap-6">
@@ -235,11 +266,11 @@ export default function BudgetAuditDocs() {
 							{/* Screenshot Placeholder */}
 							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
 								<Image
-                                src='/budget-audit/extracted-widget.png'
-                                alt='transaction labelling device intervention'
-                                fill
-                                className='object-cover p-2'
-                                />
+									src="/budget-audit/extracted-widget.png"
+									alt="transaction labelling device intervention"
+									fill
+									className="object-cover p-2"
+								/>
 							</div>
 
 							<div className="text-sm text-gray-600 bg-gray-100 p-4 rounded-lg">
@@ -387,7 +418,6 @@ function LabelCard({ title, type, desc }) {
 		</div>
 	);
 }
-
 
 // Paste your full HTML string here inside the backticks
 const PRIVACY_POLICY_HTML = `
