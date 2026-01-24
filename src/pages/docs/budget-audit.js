@@ -55,11 +55,23 @@ export default function BudgetAuditDocs() {
 						<NavLink id="creating-budget" active={activeSection}>
 							Creating a Budget
 						</NavLink>
+						<NavLink id="Adding-Documents-analytics" active={activeSection}>
+							Adding Docs for Analytics
+						</NavLink>
 						<NavLink id="financial-analytics" active={activeSection}>
 							Data & Analytics
 						</NavLink>
 						<NavLink id="settings" active={activeSection}>
 							Settings & Management
+						</NavLink>
+						<NavLink id="data-handling" active={activeSection}>
+							How Data is Handled
+						</NavLink>
+						<NavLink id="troubleshooting" active={activeSection}>
+							Troubleshooting & FAQ
+						</NavLink>
+						<NavLink id="glossary" active={activeSection}>
+							Glossary
 						</NavLink>
 						<NavLink id="privacy" active={activeSection}>
 							Privacy Notice
@@ -89,62 +101,187 @@ export default function BudgetAuditDocs() {
 
 					{/* SECTION A: Account Setup */}
 					<section id="account-setup" className="scroll-mt-28 space-y-6">
-						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">A. Setting Up Accounts</h2>
+						<div className="flex items-center justify-between">
+							<h2 className="text-2xl font-bold text-gray-900 border-b pb-2 flex-1">A. Setting Up Accounts</h2>
+							<button
+								onClick={() => {
+									navigator.clipboard.writeText(
+										window.location.origin + window.location.pathname + "#account-setup",
+									);
+								}}
+								className="text-gray-400 hover:text-blue-600 transition-colors text-sm px-3 py-1 rounded hover:bg-gray-100"
+								title="Copy link to this section"
+							>
+								🔗 Copy Link
+							</button>
+						</div>
 
 						<div className="space-y-4">
 							<h3 className="font-semibold text-xl text-gray-800">1. First Time Setup</h3>
 							<p className="text-gray-600">
-								When you launch the application for the first time, you will be prompted to create an account.
+								When you launch Budget Audit for the first time, you'll be prompted to create your initial
+								account.
 								<span className="font-medium text-gray-900"> Note:</span> This first account automatically
-								becomes the <strong>Admin Account</strong>.
+								becomes the <strong>Manager Account</strong>, giving you full administrative privileges.
 							</p>
 							<p className="text-gray-600">
-								Upon creation, you will be directed to the budgeting page. To manage users, navigate to the
-								settings menu (top-left).
+								After account creation, you'll be automatically directed to the budgeting page. To add
+								additional users or manage existing ones, navigate to the settings menu via the{" "}
+								<strong>menu bar at the top-left</strong> of the application.
 							</p>
 						</div>
 
 						<div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
-							<h4 className="font-bold text-blue-700 text-sm uppercase mb-1">Manager Powers</h4>
-							<p className="text-blue-800 text-sm">
-								Managers can edit all other users. A manager account cannot be deleted; however, it can be
-								handed over by updating the profile details to a new owner.
+							<h4 className="font-bold text-blue-700 text-sm uppercase mb-1">Manager Privileges</h4>
+							<p className="text-blue-800 text-sm mb-2">As a Manager, you have the authority to:</p>
+							<ul className="list-disc pl-5 text-sm text-blue-800 space-y-1">
+								<li>Edit all user accounts and their details</li>
+								<li>Add and remove participants</li>
+								<li>Delete budgets you've authored</li>
+								<li>Manage all vendor-account associations</li>
+							</ul>
+							<p className="text-blue-800 text-sm mt-3">
+								<strong>Important:</strong> A Manager account cannot be deleted. To transfer manager rights,
+								update the manager's profile details to reflect the new owner's information—this effectively
+								hands over administrative control.
+							</p>
+						</div>
+
+						<div className="space-y-4 mt-6">
+							<h3 className="font-semibold text-xl text-gray-800">2. Adding Additional Participants</h3>
+							<p className="text-gray-600">
+								If multiple people will be using Budget Audit (household members, roommates, etc.):
+							</p>
+							<ol className="list-decimal pl-5 space-y-2 text-gray-600">
+								<li>
+									Open the <strong>menu bar</strong> (top-left corner)
+								</li>
+								<li>
+									Select <strong>Settings</strong>
+								</li>
+								<li>
+									Navigate to <strong>Manage Participants</strong>
+								</li>
+								<li>
+									Click <strong>Add Participant</strong> and fill in their details
+								</li>
+							</ol>
+							<p className="text-sm text-gray-500 italic">
+								Participants can have transactions and budgets assigned to them specifically, allowing you to
+								track individual spending within shared budgets.
 							</p>
 						</div>
 					</section>
 
 					{/* SECTION B: Creating a Budget */}
 					<section id="creating-budget" className="scroll-mt-28 space-y-6">
-						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">B. Creating a Budget</h2>
+						<div className="flex items-center justify-between">
+							<h2 className="text-2xl font-bold text-gray-900 border-b pb-2 flex-1">B. Creating a Budget</h2>
+							<button
+								onClick={() => {
+									navigator.clipboard.writeText(
+										window.location.origin + window.location.pathname + "#creating-budget",
+									);
+								}}
+								className="text-gray-400 hover:text-blue-600 transition-colors text-sm px-3 py-1 rounded hover:bg-gray-100"
+								title="Copy link to this section"
+							>
+								🔗 Copy Link
+							</button>
+						</div>
 
-						<p className="text-gray-600">You can start a budget manually, use a template, or import a previous budget.</p>
+						<p className="text-gray-600">
+							You can start a budget in three ways: create one manually, use a pre-built template, or import a
+							previous budget.
+						</p>
 
 						<div className="space-y-4">
-							<h3 className="font-semibold text-xl text-gray-800">Manual Creation</h3>
-							<ul className="list-disc pl-5 space-y-2 text-gray-600 marker:text-blue-500">
-								<li>
-									<strong>Select a Period:</strong> This is crucial for analytics (tracking usage over
-									time).
-								</li>
-								<li>
-									<strong>Create Categories:</strong> Broad groups like <em>Toiletries</em> or{" "}
-									<em>Recurrent Bills</em>.
-								</li>
-								<li>
-									<strong>Create Accounts:</strong> Specific bills within a category.
-								</li>
-							</ul>
+							<h3 className="font-semibold text-xl text-gray-800">Option 1: Manual Creation</h3>
+
+							<div className="bg-gray-50 border border-gray-200 rounded-lg p-5 space-y-3">
+								<h4 className="font-bold text-gray-800">Step-by-Step Process:</h4>
+
+								<div className="space-y-4">
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">1. Select a Budget Period</p>
+										<p className="text-sm text-gray-600">
+											Choose how long this budget will cover. This is crucial for accurate
+											analytics and spending tracking.
+										</p>
+										<div className="bg-white p-3 rounded mt-2 border">
+											<p className="text-sm font-medium text-gray-700 mb-1">
+												Available Periods:
+											</p>
+											<ul className="text-xs text-gray-600 space-y-1 pl-4">
+												<li>• Monthly</li>
+												<li>• Quarterly (3 months)</li>
+												<li>• Semi-annually (6 months)</li>
+												<li>• Annually (12 months)</li>
+												<li>• Custom (specify number of months)</li>
+											</ul>
+										</div>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">2. Create Categories</p>
+										<p className="text-sm text-gray-600">
+											Categories are broad groupings of related expenses. Examples:{" "}
+											<em>"Groceries," "Transportation," "Entertainment," "Utilities."</em>
+										</p>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">
+											3. Create Accounts Within Categories
+										</p>
+										<p className="text-sm text-gray-600">
+											Accounts are specific line items within each category. For example,
+											under "Transportation" you might have accounts for "Fuel," "Public
+											Transit," and "Ride-sharing."
+										</p>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">4. Assign Budget Amounts</p>
+										<p className="text-sm text-gray-600">
+											For each account, enter how much money you plan to allocate over the
+											selected period.
+										</p>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">
+											5. (Optional) Associate Participants
+										</p>
+										<p className="text-sm text-gray-600">
+											If you've added multiple users, you can assign specific accounts to
+											individuals to track their personal spending.
+										</p>
+									</div>
+								</div>
+							</div>
 
 							<div className="bg-gray-100 p-4 rounded-lg text-sm space-y-2">
 								<p>
-									<strong>Rules:</strong>
+									<strong>Budget Creation Rules:</strong>
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
-									<li>Each Category must have at least one account.</li>
-									<li>Each Account must have a budgeted amount (not 0.00).</li>
+									<li>Each Category must have at least one account and cannot use the default name</li>
+									<li>Each Account must have a budgeted amount greater than 0.00</li>
+									<li>Associating accounts with participants is optional</li>
+								</ul>
+								<p className="mt-3">
+									<strong>Keyboard Shortcuts:</strong>
+								</p>
+								<ul className="list-disc pl-5 space-y-1">
 									<li>
-										<em>Tip:</em> Press <strong>Enter</strong> to jump to the next field. Pressing
-										Enter on an empty participant field skips it.
+										Press <kbd className="px-2 py-0.5 bg-white rounded border text-xs">Enter</kbd>{" "}
+										to jump to the next field
+									</li>
+									<li>
+										Pressing{" "}
+										<kbd className="px-2 py-0.5 bg-white rounded border text-xs">Enter</kbd> on an
+										empty participant field will skip it
 									</li>
 								</ul>
 							</div>
@@ -153,7 +290,7 @@ export default function BudgetAuditDocs() {
 								<div className="relative w-full h-90">
 									<Image
 										src="/budget-audit/manual-bgt-1.png"
-										alt="transaction labelling device intervention"
+										alt="Manual budget creation interface"
 										fill
 										className="object-cover p-2"
 									/>
@@ -161,177 +298,870 @@ export default function BudgetAuditDocs() {
 								<div className="relative w-full h-90">
 									<Image
 										src="/budget-audit/manual-bgt-2.png"
-										alt="transaction labelling device intervention"
+										alt="Budget category and account creation"
 										fill
 										className="object-contain p-2"
 									/>
 								</div>
 							</div>
-							<p>
-								You can only save your budget if all the creation rules are satisfied. A yellow banner below the
-								budgets will always inform you of what is missing in your budget. <br />{" "}
-								<strong>Pro Tip:</strong> Always collapse categories after completing them! <br />
-								<span className="text-gray-500 text-sm">
-									{" "}
-									| Minimizing a categroy will show you an{" "}
-									<span className="text-gray-500 text-sm">
-										<i>'incomplete'</i>{" "}
-									</span>
-									tag if any account within it is incomplete. As such, closing the categories will always ensure you dont miss anything |{" "}
-								</span>
+
+							<div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r">
+								<h4 className="font-bold text-yellow-700 text-sm uppercase mb-1">💡 Pro Tip</h4>
+								<p className="text-yellow-800 text-sm mb-2">
+									<strong>Always collapse categories after completing them!</strong> A yellow banner will
+									appear below your budget if anything is incomplete.
+								</p>
+								<p className="text-yellow-800 text-sm">
+									When you minimize a category, an <em>"incomplete"</em> tag will appear if any account
+									within it needs attention. This helps you avoid missing required fields before saving.
+								</p>
+							</div>
+						</div>
+						<div className="grid md:grid-cols-2 gap-6 mt-8">
+							<div className="border border-gray-200 rounded-lg p-5">
+								<h3 className="font-semibold text-xl text-gray-800 mb-3">Option 2: Using Templates</h3>
+								<ol className="text-sm text-gray-600 space-y-2 list-decimal pl-5">
+									<li>
+										Select <strong>Import</strong> on the budget template screen
+									</li>
+									<li>Browse the available preset budgets</li>
+									<li>Adjust the budget period if needed</li>
+									<li>
+										Click <strong>Adopt</strong> to load the template
+									</li>
+								</ol>
+								<p className="text-xs text-gray-500 mt-3 italic">
+									Note: Adopting a template will overwrite any draft work currently in your budgeting
+									canvas.
+								</p>
+							</div>
+							<div className="border border-gray-200 rounded-lg p-5">
+								<h3 className="font-semibold text-xl text-gray-800 mb-3">
+									Option 3: Importing Previous Budgets
+								</h3>
+								<ol className="text-sm text-gray-600 space-y-2 list-decimal pl-5">
+									<li>
+										Select <strong>Import</strong> to view previously created budgets
+									</li>
+									<li>Expand a budget to see its details</li>
+									<li>
+										Click <strong>Adopt</strong> to restore that configuration
+									</li>
+								</ol>
+								<p className="text-xs text-gray-500 mt-3 italic">
+									Note: This will replace any unsaved draft work in your current canvas.
+								</p>
+							</div>
+						</div>
+
+						<div className="bg-orange-50 border- l-4 border-orange-500 p-4 rounded-r mt-6">
+							<h4 className="font-bold text-orange-700 text-sm uppercase mb-2">
+								Critical: Budget Management Best Practice
+							</h4>
+							<p className="text-orange-800 text-sm mb-2">
+								<strong>Always update existing budgets rather than creating new ones from scratch.</strong>
+							</p>
+							<p className="text-orange-800 text-sm">
+								Here's why: Budget Audit learns vendor-to-account associations over time to automate transaction
+								labeling. When you delete a budget and create a new one, all these learned associations are
+								lost, and you'll need to re-train the system from scratch. Instead, modify your existing budget
+								to preserve this valuable automation.
 							</p>
 						</div>
 
-						<div className="grid md:grid-cols-2 gap-6">
-							<div>
-								<h3 className="font-semibold text-xl text-gray-800 mb-2">Using Templates</h3>
-								<p className="text-gray-600 text-sm">
-									Select <strong>Import</strong> on the budget template screen. You can browse presets,
-									adjust the period, and select "Adopt" to overwrite your current canvas.
-								</p>
-							</div>
-							<div>
-								<h3 className="font-semibold text-xl text-gray-800 mb-2">Importing Previous</h3>
-								<p className="text-gray-600 text-sm">
-									Select <strong>Import</strong> to explore previously used budgets. Expand details and
-									adopt to restore a past configuration.
-								</p>
-							</div>
-						</div>
-
-						<div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r mt-4">
-							<h4 className="font-bold text-orange-700 text-sm uppercase mb-1">Important Warning</h4>
-							<p className="text-orange-800 text-sm">
-								<strong>Always prefer updating a budget over creating a new one.</strong>
-								Budgets are associated with vendors. If you dispose of a budget to create a new one from
-								scratch, you will lose all the vendor-account associations (memory) the app has learned.
+						<div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+							<h4 className="font-bold text-blue-800 text-sm mb-2"> What Happens When You Change Budgets?</h4>
+							<p className="text-blue-800 text-sm">
+								Switching to a different budget affects your analytics view. Since budgets are tied to specific
+								time periods and transactions, changing your active budget will update all analytics to show
+								data from that budget's period. You cannot mix analytics from multiple budgets in a single view.
 							</p>
 						</div>
 					</section>
 
 					{/* SECTION C: Financial Docs */}
-					<section id="financial-analytics" className="scroll-mt-28 space-y-8">
-						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">C. Financial Documents & Analytics</h2>
+					<section id="Adding-Documents-analytics" className="scroll-mt-28 space-y-8">
+						<div className="flex items-center justify-between">
+							<h2 className="text-2xl font-bold text-gray-900 border-b pb-2 flex-1">
+								C. Financial Documents & Analytics
+							</h2>
+							<button
+								onClick={() => {
+									navigator.clipboard.writeText(
+										window.location.origin + window.location.pathname + "#financial-analytics",
+									);
+								}}
+								className="text-gray-400 hover:text-blue-600 transition-colors text-sm px-3 py-1 rounded hover:bg-gray-100"
+								title="Copy link to this section"
+							>
+								🔗 Copy Link
+							</button>
+						</div>
 
-						{/* Step 1: Upload */}
-						<div className="space-y-3">
-							<h3 className="font-semibold text-xl text-gray-800">1. Adding Transactions</h3>
-							<p className="text-gray-600">
-								To generate analytics, you must import transaction statements via the Home Page.
-							</p>
-							<ol className="list-decimal pl-5 space-y-2 text-gray-600">
-								<li>Select your financial institution (or "More" for generic OFX/CSV).</li>
-								<li>Browse for your document (PDF preferred if bank is supported).</li>
-								<li>Enter document password (if required).</li>
-								<li>
-									Assign a <strong>Document Owner</strong>.
-								</li>
-								<li>
-									Click <strong>Run Audit</strong> to extract transactions locally.
-								</li>
-							</ol>
-							<p className="text-sm text-green-700 font-medium bg-green-50 inline-block px-3 py-1 rounded-full">
-								Privacy Note: This process is 100% offline. No data leaves your device.
+						<div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-5">
+							<h4 className="font-bold text-green-800 mb-2">Complete Privacy Guarantee</h4>
+							<p className="text-sm text-green-800">
+								All transaction extraction and processing happens <strong>100% offline on your device</strong>.
+								Your bank statements never leave your computer. No data is sent to external servers during this
+								process.
 							</p>
 						</div>
 
+						{/* Step 1: Upload */}
+						<div className="space-y-4">
+							<h3 className="font-semibold text-xl text-gray-800">1. Adding Transaction Statements</h3>
+							<p className="text-gray-600">
+								Before you can generate analytics, you need to import your bank or credit card transaction
+								statements. Navigate to the{" "}
+								<a href="budgetaudit://HomeView">
+									<span className="bg-clip-text text-grey-500 border">
+										<strong>Home Page</strong>{" "}
+									</span>{" "}
+								</a>
+								to begin. <br /> PS: Ensure you have created and are using the correct budget before running
+								this.
+							</p>
+
+							<div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+								<h4 className="font-bold text-gray-800 mb-3">Step-by-Step Upload Process:</h4>
+								<ol className="space-y-3">
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											1
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">
+												Select Your Financial Institution
+											</p>
+											<p className="text-sm text-gray-600 mt-1">
+												Choose your bank from the list. If your bank isn't listed,
+												select <strong>"More"</strong> to upload generic OFX or CSV
+												files. <br />
+												If the your bank is listed, the <strong>PDF</strong> type
+												document is expected.
+											</p>
+										</div>
+									</li>
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											2
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">Browse for Your Document</p>
+											<p className="text-sm text-gray-600 mt-1">
+												This will allow you to explore <strong>PDF</strong> if you chose
+												a specific bank. Should a generic institution was chosen using
+												the <strong>Custom option</strong> you shall be able to choose a
+												document matching the type you chose e.g., CSV
+											</p>
+										</div>
+									</li>
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											3
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">
+												Enter Document Password (if required)
+											</p>
+											<p className="text-sm text-gray-600 mt-1">
+												Some banks protect statements with passwords. Enter it when
+												prompted.
+											</p>
+										</div>
+									</li>
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											4
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">Assign a Document Owner</p>
+											<p className="text-sm text-gray-600 mt-1">
+												Select which participant this statement belongs to. This helps
+												track individual spending in shared budgets.
+											</p>
+										</div>
+									</li>
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											5
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">
+												Verify & Add More (It is optional to add more, this is only
+												meant to verify and allow you to add more)
+											</p>
+											<p className="text-sm text-gray-600 mt-1">
+												Review the document details. You can add multiple documents
+												before proceeding to extraction.
+											</p>
+										</div>
+									</li>
+									<li className="flex gap-3">
+										<span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+											6
+										</span>
+										<div>
+											<p className="font-semibold text-gray-800">Run Audit</p>
+											<p className="text-sm text-gray-600 mt-1">
+												Click <strong>Run Audit</strong> to begin extracting all
+												transactions from your statement(s). This happens entirely on
+												your device.
+												<br />
+												<br />
+												<i>
+													If you realize that <strong>run audit</strong> is grey
+													and inactive at this point, please ensure you have an
+													active budget created and selected.{" "}
+												</i>
+											</p>
+										</div>
+									</li>
+								</ol>
+								<div className="relative w-full h-120 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+									<Image
+										src="/budget-audit/document-ingestion.png"
+										alt="Document entering interface showing steps"
+										fill
+										className="object-cover p-2"
+									/>
+								</div>
+							</div>
+
+							<div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r">
+								<h4 className="font-bold text-yellow-700 text-sm uppercase mb-1">
+									Alternative Formats Supported File Formats (Beta)
+								</h4>
+								<p className="text-yellow-800 text-sm mb-2">
+									OFX and CSV support is currently in <strong>beta testing</strong>. Formatting varies
+									significantly between banks.
+								</p>
+								<p className="text-yellow-800 text-sm">
+									<strong>If upload fails:</strong> Please report the issue to{" "}
+									<a href="mailto:victorkithinji@outlook.com" className="underline font-semibold">
+										victorkithinji@outlook.com
+									</a>{" "}
+									with your bank name. The parsers will be updated to support your institution.
+								</p>
+							</div>
+						</div>
 						{/* Step 2: Labelling */}
-						<div className="space-y-3">
-							<h3 className="font-semibold text-xl text-gray-800">2. Labelling Transactions</h3>
-							<p className="text-gray-600">Transactions are grouped by how well the application "remembers" them:</p>
+						<div className="space-y-4">
+							<h3 className="font-semibold text-xl text-gray-800">2. Labeling Transactions</h3>
+							<p className="text-gray-600">
+								After extraction, you'll need to associate each transaction with an account in your budget.
+								Budget Audit will remember your choices and automate future labeling.
+							</p>
+
+							<div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+								<h4 className="font-bold text-blue-800 text-sm mb-2">How the Learning System Works</h4>
+								<p className="text-sm text-blue-800">
+									Budget Audit remembers vendor-to-account associations. The first time you label a
+									transaction from "Starbucks" as "Coffee & Dining," future Starbucks transactions will
+									automatically be suggested for that same account. The more you use the app, the more
+									personalized Budget Audit becomes.
+								</p>
+							</div>
+
+							<h4 className="font-bold text-gray-800 mb-3">Understanding Transaction Categories</h4>
+							<p className="text-sm text-gray-600 mb-4">
+								Transactions are organized into four intelligence levels based on how well the application
+								recognizes them:
+							</p>
 
 							<div className="grid gap-4 md:grid-cols-2">
 								<LabelCard
-									title="Unrecognized"
+									title="🔴 Unrecognized"
 									type="input"
-									desc="Input Required. The app has never seen this vendor before."
+									desc="Input Required. Budget Audit has never seen this vendor before. You must manually select the appropriate account."
 								/>
 								<LabelCard
-									title="Semblance"
+									title="🟡 Semblance"
 									type="auto"
-									desc="Closely resembles a known vendor (e.g., 'Uber' vs 'Uber Eats'). Review advised."
+									desc="Closely resembles a known vendor (e.g., 'Uber' vs 'Uber Eats'). The app makes an educated guess, but review is strongly advised."
 								/>
 								<LabelCard
-									title="Ambiguous"
+									title="🟠 Ambiguous"
 									type="auto"
-									desc="Vendor is known but associated with multiple accounts historically. App selects latest usage."
+									desc="Vendor is recognized but has been used for multiple different accounts in the past. App assigns the most recent association—verify it's correct."
 								/>
 								<LabelCard
-									title="Sure"
+									title="🟢 Sure"
 									type="auto"
-									desc="Vendor has only ever been associated with one specific account."
+									desc="Vendor has only ever been associated with one specific account. High confidence—but you can still override if needed."
 								/>
 							</div>
 
-							{/* Screenshot Placeholder */}
 							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
 								<Image
 									src="/budget-audit/extracted-widget.png"
-									alt="transaction labelling device intervention"
+									alt="Transaction labeling interface showing categorized transactions"
 									fill
 									className="object-cover p-2"
 								/>
 							</div>
+							<div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mt-6">
+								<h4 className="font-bold text-gray-800 mb-3">Advanced Transaction Features</h4>
 
-							<div className="text-sm text-gray-600 bg-gray-100 p-4 rounded-lg">
-								<strong>Power User Tips:</strong>
-								<ul className="list-disc pl-5 mt-2 space-y-1">
+								<div className="space-y-4">
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">Auto-Update Vendors</p>
+										<p className="text-sm text-gray-600 mb-2">
+											When you assign an account to a transaction, Budget Audit checks if
+											other unlabeled transactions from the same vendor exist.
+										</p>
+										<div className="bg-white border rounded p-3 text-xs text-gray-700 space-y-2">
+											<p className="font-semibold">Example Pop-up:</p>
+											<div className="bg-gray-100 p-2 rounded">
+												<p className="font-bold">Update all vendors?</p>
+												<p>You have assigned "Uber" to "Daily Commute"</p>
+												<p className="text-orange-600">
+													(!) Found 3 other transactions with "Uber" that haven't
+													been labeled yet.
+												</p>
+												<p>Would you like to update all of them to this account?</p>
+												<p className="mt-2">
+													<label className="flex items-center gap-2">
+														<input type="checkbox" className="rounded" />
+														<span>
+															Don't ask me again for all other vendors
+														</span>
+													</label>
+												</p>
+												<div className="flex gap-2 mt-3">
+													<button className="px-3 py-1 bg-gray-200 rounded text-xs">
+														Just this one
+													</button>
+													<button className="px-3 py-1 bg-blue-600 text-white rounded text-xs">
+														Update all
+													</button>
+												</div>
+											</div>
+										</div>
+										<p className="text-sm text-gray-600 mt-2">
+											<strong>Tip:</strong> If you check "Don't ask me again," you can
+											re-enable the prompt by toggling the{" "}
+											<strong>"Auto-update Vendors"</strong> option at the top of the
+											transaction list.
+										</p>
+
+										<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+											<Image
+												src="/budget-audit/update-vendors.png"
+												alt="Re-enable vendor recognition steps"
+												fill
+												className="object-cover p-2"
+											/>
+										</div>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">Splitting Transactions</p>
+										<p className="text-sm text-gray-600 mb-2">
+											Need to divide a single transaction across multiple budget accounts? You
+											can split any transaction indefinitely.
+										</p>
+										<div className="bg-white border rounded p-3 text-sm">
+											<p className="font-semibold mb-2">How to Split:</p>
+											<ol className="list-decimal pl-5 space-y-1 text-xs text-gray-600">
+												<li>
+													Expand the transaction (click the arrow on the far
+													right)
+												</li>
+												<li>
+													Click <strong>Split Transaction</strong>
+												</li>
+												<li>Enter the amount for the new split</li>
+												<li>Select the account for this split portion</li>
+												<li>The original transaction amount automatically adjusts</li>
+											</ol>
+											<div className="bg-yellow-50 border-l-4 border-yellow-400 p-2 mt-3 text-xs">
+												<p className="font-bold text-yellow-800">⚠️ Known Bug:</p>
+												<p className="text-yellow-700">
+													After splitting, the new transaction may not show the
+													assigned account. You'll need to manually select it
+													again. A patch is coming soon.
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">Ignoring Transactions</p>
+										<p className="text-sm text-gray-600">
+											Some transactions don't belong in your budget analysis (transfers
+											between your own accounts, refunds, etc.). You can exclude them:
+										</p>
+										<ol className="list-decimal pl-5 text-xs text-gray-600 mt-2 space-y-1">
+											<li>Expand the transaction</li>
+											<li>
+												Click <strong>Ignore Transaction</strong>
+											</li>
+											<li>The transaction will be excluded from all analytics</li>
+										</ol>
+									</div>
+
+									<div>
+										<p className="font-semibold text-gray-800 mb-1">
+											Preventing Future Auto-Association
+										</p>
+										<p className="text-sm text-gray-600">
+											If a vendor assignment is a one-time exception (e.g., you bought gas
+											from a grocery store just once), you can prevent Budget Audit from
+											remembering this association:
+										</p>
+										<ol className="list-decimal pl-5 text-xs text-gray-600 mt-2 space-y-1">
+											<li>Expand the transaction</li>
+											<li>
+												Uncheck <strong>Remember this association</strong>
+											</li>
+											<li>This vendor-account link won't be saved for future transactions</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
+							<div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-5 mt-4">
+								<h4 className="font-bold text-purple-800 mb-2">💡 Power User Workflow</h4>
+								<p className="text-sm text-purple-800 mb-3">
+									For fastest labeling, work through transactions in this order:
+								</p>
+								<ol className="list-decimal pl-5 text-sm text-purple-800 space-y-1">
 									<li>
-										<strong>Splitting:</strong> If a transaction covers two accounts, you can split
-										it indefinitely.
+										Review and correct <strong>Semblance</strong> transactions (similar vendor
+										names)
 									</li>
 									<li>
-										<strong>Ignoring:</strong> Expand a transaction and select "Ignore" to exclude
-										it from analytics.
+										Verify <strong>Ambiguous</strong> assignments are appropriate
 									</li>
 									<li>
-										<strong>Autofill:</strong> The app will offer to autofill similar transactions
-										as you work.
+										Label all <strong>Unrecognized</strong> vendors
 									</li>
-								</ul>
+									<li>
+										Spot-check <strong>Sure</strong> transactions for accuracy
+									</li>
+									<li>Use the right arrow → to proceed to the next document</li>
+									<li>
+										Click <strong>Complete Audit</strong> when all documents are processed
+									</li>
+								</ol>
 							</div>
 						</div>
+					</section>
 
-						{/* Step 3: Analytics */}
-						<div className="space-y-4">
+					{/* Step 3: Analytics */}
+
+					<section id="financial-analytics">
+						<div className="space-y-6">
 							<h3 className="font-semibold text-xl text-gray-800">3. Understanding Analytics</h3>
-							<p className="text-gray-600">Navigate to the Analytics tab to visualize your data.</p>
+							<p className="text-gray-600">
+								Once you've labeled your transactions, navigate to the <strong>Analytics tab</strong> from the
+								menu to visualize your financial data. Budget Audit provides two main analysis views.
+							</p>
 
+							<div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+								<h4 className="font-bold text-gray-800 mb-3">Analytics Controls</h4>
+								<p className="text-sm text-gray-600 mb-3">
+									At the top of the Analytics page, you'll find powerful filtering options:
+								</p>
+
+								<div className="space-y-3">
+									<div className="bg-white border rounded p-3">
+										<p className="font-semibold text-sm text-gray-800 mb-1">Budget Selector</p>
+										<p className="text-xs text-gray-600">
+											Switch between different budgets you've created.{" "}
+											<strong>Important:</strong> Changing budgets updates all graphs to show
+											data from that budget's time period. You cannot mix data from multiple
+											budgets in one view.
+										</p>
+									</div>
+
+									<div className="bg-white border rounded p-3">
+										<p className="font-semibold text-sm text-gray-800 mb-1">Period Navigation</p>
+										<p className="text-xs text-gray-600 mb-2">
+											Move forward or backward through time periods. By default, the view
+											shows the most recent period with transaction data.
+										</p>
+										<p className="text-xs text-gray-600">
+											<strong>Period Step Size:</strong> Choose how data is grouped (Daily,
+											Weekly, Monthly, Quarterly, Semi-annually, Annually). Note: You cannot
+											select a step size equal to or larger than your budget period.
+										</p>
+									</div>
+
+									<div className="bg-white border rounded p-3">
+										<p className="font-semibold text-sm text-gray-800 mb-1">Participant Filter</p>
+										<p className="text-xs text-gray-600">
+											<strong>All (Average):</strong> Shows combined data from all
+											participants
+											<br />
+											<strong>Individual Participant:</strong> View spending data for just one
+											person
+										</p>
+									</div>
+								</div>
+							</div>
 							<div className="space-y-6">
-								<div>
-									<h4 className="font-bold text-gray-900">Budget Analytics Tab</h4>
-									<p className="text-gray-600 text-sm mb-2">
-										Visualizes your planned resource allocation.
-									</p>
-									<ul className="list-disc pl-5 text-sm text-gray-600">
-										<li>
-											<strong>Budget by Category (Pie):</strong> Percentage of total budget
-											per category.
-										</li>
-										<li>
-											<strong>Account Breakdown (Bar):</strong> Detailed breakdown of accounts
-											within the selected category slice.
-										</li>
-									</ul>
-								</div>
+								{/* Budget Analytics Tab */}
+								<div className="border border-gray-300 rounded-lg overflow-hidden">
+									<div className="bg-blue-600 text-white px-5 py-3">
+										<h4 className="font-bold text-lg">Budget Analytics Tab</h4>
+										<p className="text-sm text-blue-100 mt-1">
+											Visualize your planned resource allocation and priorities
+										</p>
+									</div>
+									<div className="p-5 space-y-4">
+										<div>
+											<p className="font-bold text-gray-800 mb-2">
+												1. Budget by Category (Pie Chart)
+											</p>
+											<p className="text-sm text-gray-600 mb-2">
+												This pie chart shows what percentage of your total budget is
+												allocated to each category.
+											</p>
+											<div className="bg-gray-50 p-3 rounded text-xs text-gray-600">
+												<p className="font-semibold mb-1">Example:</p>
+												<ul className="space-y-1 pl-4">
+													<li>• Groceries: 30% of total budget</li>
+													<li>• Transportation: 20% of total budget</li>
+													<li>• Entertainment: 15% of total budget</li>
+													<li>• Utilities: 35% of total budget</li>
+												</ul>
+											</div>
+										</div>
 
-								<div>
-									<h4 className="font-bold text-gray-900">Expenditure Analytics Tab</h4>
-									<p className="text-gray-600 text-sm mb-2">
-										Visualizes actual spending vs. planned budget.
-									</p>
-									<ul className="list-disc pl-5 text-sm text-gray-600">
-										<li>
-											<strong>Expenditure vs. Budget:</strong> Tracks % of budget used over
-											time (tends toward 100%).
-										</li>
-										<li>
-											<strong>Daily Usage:</strong> A bar graph showing exactly what % of the
-											budget was consumed on specific days (useful for spotting weekend
-											spikes).
-										</li>
-									</ul>
+										<div>
+											<p className="font-bold text-gray-800 mb-2">
+												2. Account Breakdown (Bar Chart)
+											</p>
+											<p className="text-sm text-gray-600 mb-2">
+												This companion chart shows the detailed breakdown of accounts{" "}
+												<strong>within the selected category slice</strong> from the pie
+												chart. By default, it displays the largest category.
+											</p>
+											<div className="bg-gray-50 p-3 rounded text-xs text-gray-600">
+												<p className="font-semibold mb-1">How to use:</p>
+												<ul className="space-y-1 pl-4">
+													<li>• Click any slice of the pie chart</li>
+													<li>
+														• The bar chart updates to show all accounts in
+														that category
+													</li>
+													<li>
+														• Each bar represents the budgeted amount for
+														that specific account
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
+								{/* Expenditure Analytics Tab */}
+								<div className="border border-gray-300 rounded-lg overflow-hidden">
+									<div className="bg-green-600 text-white px-5 py-3">
+										<h4 className="font-bold text-lg">Expenditure Analytics Tab</h4>
+										<p className="text-sm text-green-100 mt-1">
+											Track actual spending against your planned budget
+										</p>
+									</div>
+									<div className="p-5 space-y-6">
+										<div>
+											<p className="font-bold text-gray-800 mb-2">
+												1. Expenditure vs Budget (Line Graph)
+											</p>
+											<p className="text-sm text-gray-600 mb-3">
+												This graph tracks what percentage of your total budget has been
+												consumed over time within the current period.
+											</p>
+											<div className="bg-gray-50 p-3 rounded text-xs text-gray-600 space-y-2">
+												<p className="font-semibold">How it works:</p>
+												<ul className="space-y-1 pl-4">
+													<li>
+														• Starts at 0% at the beginning of each budget
+														period
+													</li>
+													<li>• Gradually increases toward 100% as you spend</li>
+													<li>• Each budget period is treated independently</li>
+													<li>
+														• Helps you see if you're on track or
+														overspending early
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
+											<h5 className="font-bold text-blue-800 text-sm mb-2">
+												📈 Two Analysis Views Available
+											</h5>
+											<p className="text-sm text-blue-800 mb-2">
+												Toggle between these modes to see different perspectives on your
+												spending:
+											</p>
+											<div className="grid md:grid-cols-2 gap-3 text-xs">
+												<div className="bg-white p-3 rounded border border-blue-200">
+													<p className="font-bold text-blue-900 mb-1">
+														🔍 Spending Deep Dive
+													</p>
+													<p className="text-blue-800">
+														Visual graphs and charts for pattern analysis
+													</p>
+												</div>
+												<div className="bg-white p-3 rounded border border-blue-200">
+													<p className="font-bold text-blue-900 mb-1">
+														📝 Detailed Analysis
+													</p>
+													<p className="text-blue-800">
+														Ordered lists ranked by usage percentage
+													</p>
+												</div>
+											</div>
+										</div>
+										{/* Deep Dive Section */}
+										<div className="border-t pt-4">
+											<h5 className="font-bold text-gray-800 mb-3 bg-purple-50 px-3 py-2 rounded">
+												Spending Deep Dive
+											</h5>
+
+											<div className="space-y-4 pl-3">
+												<div>
+													<p className="font-semibold text-gray-800 mb-2">
+														A. Resource Allocation by Category
+													</p>
+													<p className="text-sm text-gray-600 mb-2">
+														Similar to the Budget Analytics view, but shows{" "}
+														<strong>actual spending</strong> rather than
+														planned budgets.
+													</p>
+													<div className="bg-white border rounded p-3 text-xs text-gray-600 space-y-2">
+														<p>
+															<strong>
+																Spending by Category (Pie
+																Chart):
+															</strong>
+														</p>
+														<ul className="pl-4 space-y-1">
+															<li>
+																• Takes your total expenditure
+																for the period as 100%
+															</li>
+															<li>
+																• Shows what portion went to
+																each category
+															</li>
+															<li>
+																• Example: If you spent $1,000
+																total, and $300 went to
+																groceries, the Groceries slice
+																is 30%
+															</li>
+														</ul>
+														<p className="mt-2">
+															<strong>
+																Account Breakdown (Bar Chart):
+															</strong>
+														</p>
+														<ul className="pl-4 space-y-1">
+															<li>
+																• Shows accounts within the
+																selected category
+															</li>
+															<li>
+																•{" "}
+																<strong>Key difference:</strong>{" "}
+																Each bar represents the ratio of
+																amount spent to amount budgeted
+															</li>
+															<li>
+																• Bars can exceed 100% if you
+																overspent that account
+															</li>
+															<li>
+																• Each bar is independent
+																(unlike budget view where they
+																show absolute amounts)
+															</li>
+														</ul>
+													</div>
+												</div>
+
+												<div>
+													<p className="font-semibold text-gray-800 mb-2">
+														B. Daily Spending Pattern (Bar Graph)
+													</p>
+													<p className="text-sm text-gray-600 mb-2">
+														Shows what percentage of your total budget was
+														consumed <strong>each day</strong> during the
+														period.
+													</p>
+													<div className="bg-white border rounded p-3 text-xs text-gray-600">
+														<p className="font-semibold mb-2">
+															Insights you can gain:
+														</p>
+														<ul className="pl-4 space-y-1">
+															<li>
+																• Spot spending spikes (e.g.,
+																high spending on weekends or
+																payday)
+															</li>
+															<li>
+																• Identify patterns like heavy
+																spending early in the period
+															</li>
+															<li>
+																• All daily bars together add up
+																to 100% of your period's
+																spending
+															</li>
+															<li>
+																• Useful for understanding your
+																spending rhythm and adjusting
+																behavior
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										{/* Detailed Analysis Section */}
+										<div className="border-t pt-4">
+											<h5 className="font-bold text-gray-800 mb-3 bg-orange-50 px-3 py-2 rounded">
+												Detailed Analysis
+											</h5>
+
+											<div className="space-y-4 pl-3">
+												<div>
+													<p className="font-semibold text-gray-800 mb-2">
+														A. Categories by Usage
+													</p>
+													<p className="text-sm text-gray-600 mb-2">
+														A ranked list of all budget categories sorted by{" "}
+														<strong>usage percentage</strong> (ratio of
+														expenditure to budget), highest first.
+													</p>
+													<div className="bg-white border rounded p-3 text-xs text-gray-600">
+														<p className="font-semibold mb-2">
+															What you'll see for each category:
+														</p>
+														<ul className="pl-4 space-y-1">
+															<li>• Total amount spent</li>
+															<li>• Total amount budgeted</li>
+															<li>
+																• Usage percentage (spent ÷
+																budgeted × 100)
+															</li>
+															<li>
+																•{" "}
+																<strong>
+																	Expandable details:
+																</strong>{" "}
+																List of all accounts within the
+																category with their individual
+																totals and percentages
+															</li>
+														</ul>
+														<p className="mt-2 text-gray-700 italic">
+															This helps you quickly identify which
+															categories are consuming budget fastest
+															and which specific accounts are driving
+															those numbers.
+														</p>
+													</div>
+												</div>
+
+												<div>
+													<p className="font-semibold text-gray-800 mb-2">
+														B. Accounts by Usage
+													</p>
+													<p className="text-sm text-gray-600 mb-2">
+														All budget accounts ranked by usage percentage,
+														regardless of category.
+													</p>
+													<div className="bg-white border rounded p-3 text-xs text-gray-600">
+														<p>
+															Quickly see which individual line items
+															are using the most budget, helping you
+															prioritize where to cut spending if
+															needed.
+														</p>
+													</div>
+												</div>
+
+												<div>
+													<p className="font-semibold text-gray-800 mb-2">
+														C. Vendors by Total Spending
+													</p>
+													<p className="text-sm text-gray-600 mb-2">
+														A complete list of all vendors you've spent
+														money with, sorted by total amount spent
+														(highest first).
+													</p>
+													<div className="bg-white border rounded p-3 text-xs text-gray-600">
+														<p className="font-semibold mb-2">
+															Use this to:
+														</p>
+														<ul className="pl-4 space-y-1">
+															<li>
+																• Identify your most expensive
+																vendors
+															</li>
+															<li>
+																• Spot subscription services or
+																recurring charges
+															</li>
+															<li>
+																• Find opportunities to
+																negotiate better rates or switch
+																providers
+															</li>
+															<li>
+																• Understand where your money
+																actually goes beyond category
+																abstractions
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg p-5 mt-6">
+								<h4 className="font-bold text-indigo-800 mb-2">💡 Analytics Pro Tips</h4>
+								<ul className="text-sm text-indigo-800 space-y-2">
+									<li className="flex gap-2">
+										<span className="flex-shrink-0">•</span>
+										<span>
+											Use <strong>Daily</strong> step size to spot exact dates of large
+											purchases
+										</span>
+									</li>
+									<li className="flex gap-2">
+										<span className="flex-shrink-0">•</span>
+										<span>
+											Compare <strong>Budget Analytics</strong> with{" "}
+											<strong>Expenditure Analytics</strong> to see where your priorities
+											differ from your actual behavior
+										</span>
+									</li>
+									<li className="flex gap-2">
+										<span className="flex-shrink-0">•</span>
+										<span>
+											Check the <strong>Vendors by Total Spending</strong> list monthly to
+											catch unwanted subscriptions
+										</span>
+									</li>
+									<li className="flex gap-2">
+										<span className="flex-shrink-0">•</span>
+										<span>
+											If you're consistently overspending in a category, expand it in{" "}
+											<strong>Categories by Usage</strong> to find which specific accounts are
+											the culprits
+										</span>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</section>
@@ -359,9 +1189,195 @@ export default function BudgetAuditDocs() {
 						</div>
 					</section>
 
+					{/* SECTION E: How Data is Handled */}
+					<section id="data-handling" className="scroll-mt-28 space-y-6">
+						<div className="flex items-center justify-between">
+							<h2 className="text-2xl font-bold text-gray-900 border-b pb-2 flex-1">E. How Data is Handled</h2>
+							<button
+								onClick={() => {
+									navigator.clipboard.writeText(
+										window.location.origin + window.location.pathname + "#data-handling",
+									);
+								}}
+								className="text-gray-400 hover:text-blue-600 transition-colors text-sm px-3 py-1 rounded hover:bg-gray-100"
+								title="Copy link to this section"
+							>
+								🔗 Copy Link
+							</button>
+						</div>
+
+						<div className="space-y-5">
+							{/* Principle 1 */}
+							<div className="border-l-4 border-green-500 bg-white p-5 rounded-r-lg shadow-sm">
+								<div className="flex items-start gap-3 mb-3">
+									<span className="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
+										1
+									</span>
+									<h4 className="font-bold text-lg text-gray-900">100% Local Processing</h4>
+								</div>
+								<p className="text-gray-700 ml-11">
+									<strong>Your financial data never leaves your device.</strong> All transaction
+									extraction, analysis, and processing happens entirely on your local machine. When you
+									upload bank statements, they are analyzed using your device's computing power—no
+									servers, no cloud storage, no external transmission.
+								</p>
+								<div className="ml-11 mt-3 bg-green-50 p-3 rounded text-sm text-green-800">
+									<p className="font-semibold">What this means for you:</p>
+									<ul className="list-disc pl-5 mt-1 space-y-1">
+										<li>No risk of data breaches on remote servers</li>
+										<li>Complete control over your financial information</li>
+										<li>Works offline—no internet connection required for core features</li>
+									</ul>
+								</div>
+							</div>
+
+							{/* Principle 2 */}
+							<div className="border-l-4 border-blue-500 bg-white p-5 rounded-r-lg shadow-sm">
+								<div className="flex items-start gap-3 mb-3">
+									<span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+										2
+									</span>
+									<h4 className="font-bold text-lg text-gray-900">Opt-In Online Features</h4>
+								</div>
+								<p className="text-gray-700 ml-11 mb-3">
+									Any feature that requires online connectivity is <strong>completely optional</strong>{" "}
+									and requires your explicit consent. You will always be informed about:
+								</p>
+								<ul className="text-sm text-gray-700 ml-11 space-y-2 list-disc pl-5">
+									<li>
+										<strong>What data</strong> is being shared
+									</li>
+									<li>
+										<strong>Why</strong> it's needed for the feature to work
+									</li>
+									<li>
+										<strong>Where</strong> it's being sent (third-party services)
+									</li>
+									<li>
+										<strong>How</strong> to disable the feature if you change your mind
+									</li>
+								</ul>
+								<div className="ml-11 mt-3 bg-blue-50 p-3 rounded text-sm text-blue-800">
+									<p className="italic">
+										Budget Audit will never enable online features without your knowledge or
+										permission. If you choose to keep everything offline, all core functionality
+										remains available.
+									</p>
+								</div>
+							</div>
+							{/* Principle 3 */}
+							<div className="border-l-4 border-purple-500 bg-white p-5 rounded-r-lg shadow-sm">
+								<div className="flex items-start gap-3 mb-3">
+									<span className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">
+										3
+									</span>
+									<h4 className="font-bold text-lg text-gray-900">Future Export Capabilities</h4>
+								</div>
+								<p className="text-gray-700 ml-11 mb-3">
+									Planned future versions may support exporting your financial data to formats like Excel
+									or Google Sheets for further analysis.
+								</p>
+								<div className="ml-11 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
+									<p className="text-sm text-yellow-900 font-semibold mb-2">⚠️ Important Disclosure</p>
+									<p className="text-sm text-yellow-800">
+										When you choose to export to third-party services like Google Sheets, your
+										financial data will be shared with those providers according to{" "}
+										<strong>their terms of service and privacy policies</strong>, not ours. Budget
+										Audit acts only as a facilitator for this export—you are choosing to trust the
+										third-party service with your data.
+									</p>
+								</div>
+								<p className="text-sm text-gray-600 ml-11 mt-3 italic">
+									Standard file exports (e.g., downloading a CSV to your device) remain completely private
+									with no third-party involvement.
+								</p>
+							</div>
+
+							{/* Principle 4 */}
+							<div className="border-l-4 border-orange-500 bg-white p-5 rounded-r-lg shadow-sm">
+								<div className="flex items-start gap-3 mb-3">
+									<span className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold">
+										4
+									</span>
+									<h4 className="font-bold text-lg text-gray-900">Account Recovery Features (Future)</h4>
+								</div>
+								<p className="text-gray-700 ml-11 mb-3">
+									Future versions may include optional cloud-based account recovery features (password
+									reset, multi-device sync). If implemented, these features would require sharing minimal
+									personal information with Budget Audit servers:
+								</p>
+								<ul className="text-sm text-gray-700 ml-11 space-y-1 list-disc pl-5 mb-3">
+									<li>Username</li>
+									<li>Email address</li>
+								</ul>
+								<div className="ml-11 bg-blue-50 p-3 rounded text-sm text-blue-800">
+									<p className="font-semibold mb-1">Data Usage Promise:</p>
+									<p>
+										This information would be used{" "}
+										<strong>exclusively for account recovery and authentication purposes</strong>.
+										It would never be sold, shared with third parties for marketing, or used for any
+										purpose other than enabling the specific features you've opted into.
+									</p>
+								</div>
+								<p className="text-sm text-gray-600 ml-11 mt-3 italic">
+									Note: These features do not currently exist and will be clearly marked as optional when
+									introduced.
+								</p>
+							</div>
+							{/* Principle 5 - AI Features */}
+							<div className="border-l-4 border-red-500 bg-white p-5 rounded-r-lg shadow-sm">
+								<div className="flex items-start gap-3 mb-3">
+									<span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">
+										5
+									</span>
+									<h4 className="font-bold text-lg text-gray-900">Future AI-Powered Budget Creation</h4>
+								</div>
+								<p className="text-gray-700 ml-11 mb-3">
+									Future versions may include AI-powered features where you can describe your financial
+									situation to an AI assistant (Large Language Model) to generate personalized budget
+									recommendations.
+								</p>
+
+								<div className="ml-11 bg-blue-50 border border-blue-200 p-5 rounded-xl">
+									<div className="flex items-center gap-2 mb-3">
+										<span className="text-blue-600">ℹ️</span>
+										<h3 className="text-blue-900 font-semibold text-lg">AI & Data Privacy</h3>
+									</div>
+
+									<p className="text-blue-800 mb-4 text-sm leading-relaxed">
+										To generate your budget, we use industry-leading AI from providers like OpenAI
+										and Anthropic. Before you start, please keep these privacy practices in mind:
+									</p>
+
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+										<div className="bg-white/50 p-3 rounded border border-blue-100">
+											<p className="font-bold text-blue-900 mb-1">Data Processing</p>
+											<p className="text-blue-800">
+												AI providers may use shared data to improve their future models.
+												Information shared here is permanent.
+											</p>
+										</div>
+										<div className="bg-white/50 p-3 rounded border border-blue-100">
+											<p className="font-bold text-blue-900 mb-1">Best Practices</p>
+											<p className="text-blue-800 text-xs italic">"I spend $200 on gas"</p>
+											<p className="text-blue-800 mt-1 text-xs uppercase tracking-wider font-bold">
+												Never share account numbers or passwords.
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<p className="text-sm text-gray-600 ml-11 mt-3 italic">
+									Note: These AI features do not currently exist. When introduced, they will be clearly
+									labeled as experimental with prominent privacy warnings.
+								</p>
+							</div>
+						</div>
+					</section>
+
 					{/* SECTION E: Privacy */}
 					<section id="privacy" className="scroll-mt-28 space-y-6 pb-20">
-						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">E. Privacy Notice</h2>
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">F. Privacy Notice</h2>
 
 						<div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
 							{/* Header for the Privacy Box */}
@@ -418,6 +1434,7 @@ function LabelCard({ title, type, desc }) {
 		</div>
 	);
 }
+
 
 // Paste your full HTML string here inside the backticks
 const PRIVACY_POLICY_HTML = `
