@@ -1340,12 +1340,11 @@ export default function BudgetAuditDocs() {
 
 								<div className="ml-11 bg-blue-50 border border-blue-200 p-5 rounded-xl">
 									<div className="flex items-center gap-2 mb-3">
-										<span className="text-blue-600">ℹ️</span>
 										<h3 className="text-blue-900 font-semibold text-lg">AI & Data Privacy</h3>
 									</div>
 
 									<p className="text-blue-800 mb-4 text-sm leading-relaxed">
-										To generate your budget, we use industry-leading AI from providers like OpenAI
+										To generate your budget using AI, budget audit relies on providers like OpenAI
 										and Anthropic. Before you start, please keep these privacy practices in mind:
 									</p>
 
@@ -1359,9 +1358,10 @@ export default function BudgetAuditDocs() {
 										</div>
 										<div className="bg-white/50 p-3 rounded border border-blue-100">
 											<p className="font-bold text-blue-900 mb-1">Best Practices</p>
-											<p className="text-blue-800 text-xs italic">"I spend $200 on gas"</p>
-											<p className="text-blue-800 mt-1 text-xs uppercase tracking-wider font-bold">
-												Never share account numbers or passwords.
+											<p className="text-blue-800 mt-1 text-xs tracking-wider">
+												Never share account numbers or passwords, account number or any personal information
+												<br/>Be careful as you share personal financial details 
+												
 											</p>
 										</div>
 									</div>
