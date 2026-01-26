@@ -1,0 +1,428 @@
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+export default function BudgetAuditDocs() {
+	const [activeSection, setActiveSection] = useState("");
+
+	// Simple scroll spy to highlight active section in sidebar
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = document.querySelectorAll("section[id]");
+			let current = "";
+			sections.forEach((section) => {
+				const sectionTop = section.offsetTop;
+				if (scrollY >= sectionTop - 150) {
+					current = section.getAttribute("id");
+				}
+			});
+			setActiveSection(current);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	return (
+		<div className="min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-blue-100">
+			<Head>
+				<title>Budget Audit | Documentation</title>
+				<meta name="description" content="User guide and documentation for Budget Audit." />
+			</Head>
+
+			{/* --- Header --- */}
+			<header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+				<div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+					<div className="flex items-center gap-3">
+						<Link href="/" className="font-bold text-xl text-blue-600 hover:opacity-80">
+							VictorCodebase
+						</Link>
+						<span className="text-gray-300">/</span>
+						<h1 className="font-semibold text-gray-700">Budget Audit Docs</h1>
+					</div>
+					<span className="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-500">v1.0.0</span>
+				</div>
+			</header>
+
+			<div className="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+				{/* --- Sidebar Navigation (Desktop) --- */}
+				<aside className="hidden lg:block w-64 flex-shrink-0">
+					<nav className="sticky top-24 space-y-1">
+						<p className="uppercase text-xs font-bold text-gray-400 mb-4 tracking-wider">Contents</p>
+						<NavLink id="account-setup" active={activeSection}>
+							Account Setup
+						</NavLink>
+						<NavLink id="creating-budget" active={activeSection}>
+							Creating a Budget
+						</NavLink>
+						<NavLink id="financial-analytics" active={activeSection}>
+							Data & Analytics
+						</NavLink>
+						<NavLink id="settings" active={activeSection}>
+							Settings & Management
+						</NavLink>
+						<NavLink id="privacy" active={activeSection}>
+							Privacy Notice
+						</NavLink>
+					</nav>
+				</aside>
+
+				{/* --- Main Content --- */}
+				<main className="flex-1 max-w-4xl space-y-16">
+					{/* Introduction */}
+					<div className="space-y-4">
+						<h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Getting Started with Budget Audit</h1>
+						<p className="text-lg text-gray-600 leading-relaxed">
+							Welcome to Budget Audit! <br />
+							This documentation should get you started on all you need to start managing your finances better.
+						</p>
+						{/* Screenshot Placeholder */}
+						<div className="relative w-full h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
+							<Image
+								src="/budget-audit/documentation-banner.png"
+								alt="Budget Audit documentation banner"
+								fill
+								className="object-cover rounded-lg p-2"
+							/>
+						</div>
+					</div>
+
+					{/* SECTION A: Account Setup */}
+					<section id="account-setup" className="scroll-mt-28 space-y-6">
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">A. Setting Up Accounts</h2>
+
+						<div className="space-y-4">
+							<h3 className="font-semibold text-xl text-gray-800">1. First Time Setup</h3>
+							<p className="text-gray-600">
+								When you launch the application for the first time, you will be prompted to create an account.
+								<span className="font-medium text-gray-900"> Note:</span> This first account automatically
+								becomes the <strong>Admin Account</strong>.
+							</p>
+							<p className="text-gray-600">
+								Upon creation, you will be directed to the budgeting page. To manage users, navigate to the
+								settings menu (top-left).
+							</p>
+						</div>
+
+						<div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
+							<h4 className="font-bold text-blue-700 text-sm uppercase mb-1">Manager Powers</h4>
+							<p className="text-blue-800 text-sm">
+								Managers can edit all other users. A manager account cannot be deleted; however, it can be
+								handed over by updating the profile details to a new owner.
+							</p>
+						</div>
+					</section>
+
+					{/* SECTION B: Creating a Budget */}
+					<section id="creating-budget" className="scroll-mt-28 space-y-6">
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">B. Creating a Budget</h2>
+
+						<p className="text-gray-600">You can start a budget manually, use a template, or import a previous budget.</p>
+
+						<div className="space-y-4">
+							<h3 className="font-semibold text-xl text-gray-800">Manual Creation</h3>
+							<ul className="list-disc pl-5 space-y-2 text-gray-600 marker:text-blue-500">
+								<li>
+									<strong>Select a Period:</strong> This is crucial for analytics (tracking usage over
+									time).
+								</li>
+								<li>
+									<strong>Create Categories:</strong> Broad groups like <em>Toiletries</em> or{" "}
+									<em>Recurrent Bills</em>.
+								</li>
+								<li>
+									<strong>Create Accounts:</strong> Specific bills within a category.
+								</li>
+							</ul>
+
+							<div className="bg-gray-100 p-4 rounded-lg text-sm space-y-2">
+								<p>
+									<strong>Rules:</strong>
+								</p>
+								<ul className="list-disc pl-5 space-y-1">
+									<li>Each Category must have at least one account.</li>
+									<li>Each Account must have a budgeted amount (not 0.00).</li>
+									<li>
+										<em>Tip:</em> Press <strong>Enter</strong> to jump to the next field. Pressing
+										Enter on an empty participant field skips it.
+									</li>
+								</ul>
+							</div>
+
+							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+								<div className="relative w-full h-90">
+									<Image
+										src="/budget-audit/manual-bgt-1.png"
+										alt="transaction labelling device intervention"
+										fill
+										className="object-cover p-2"
+									/>
+								</div>
+								<div className="relative w-full h-90">
+									<Image
+										src="/budget-audit/manual-bgt-2.png"
+										alt="transaction labelling device intervention"
+										fill
+										className="object-contain p-2"
+									/>
+								</div>
+							</div>
+							<p>
+								You can only save your budget if all the creation rules are satisfied. A yellow banner below the
+								budgets will always inform you of what is missing in your budget. <br />{" "}
+								<strong>Pro Tip:</strong> Always collapse categories after completing them! <br />
+								<span className="text-gray-500 text-sm">
+									{" "}
+									| Minimizing a categroy will show you an{" "}
+									<span className="text-gray-500 text-sm">
+										<i>'incomplete'</i>{" "}
+									</span>
+									tag if any account within it is incomplete. As such, closing the categories will always ensure you dont miss anything |{" "}
+								</span>
+							</p>
+						</div>
+
+						<div className="grid md:grid-cols-2 gap-6">
+							<div>
+								<h3 className="font-semibold text-xl text-gray-800 mb-2">Using Templates</h3>
+								<p className="text-gray-600 text-sm">
+									Select <strong>Import</strong> on the budget template screen. You can browse presets,
+									adjust the period, and select "Adopt" to overwrite your current canvas.
+								</p>
+							</div>
+							<div>
+								<h3 className="font-semibold text-xl text-gray-800 mb-2">Importing Previous</h3>
+								<p className="text-gray-600 text-sm">
+									Select <strong>Import</strong> to explore previously used budgets. Expand details and
+									adopt to restore a past configuration.
+								</p>
+							</div>
+						</div>
+
+						<div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r mt-4">
+							<h4 className="font-bold text-orange-700 text-sm uppercase mb-1">Important Warning</h4>
+							<p className="text-orange-800 text-sm">
+								<strong>Always prefer updating a budget over creating a new one.</strong>
+								Budgets are associated with vendors. If you dispose of a budget to create a new one from
+								scratch, you will lose all the vendor-account associations (memory) the app has learned.
+							</p>
+						</div>
+					</section>
+
+					{/* SECTION C: Financial Docs */}
+					<section id="financial-analytics" className="scroll-mt-28 space-y-8">
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">C. Financial Documents & Analytics</h2>
+
+						{/* Step 1: Upload */}
+						<div className="space-y-3">
+							<h3 className="font-semibold text-xl text-gray-800">1. Adding Transactions</h3>
+							<p className="text-gray-600">
+								To generate analytics, you must import transaction statements via the Home Page.
+							</p>
+							<ol className="list-decimal pl-5 space-y-2 text-gray-600">
+								<li>Select your financial institution (or "More" for generic OFX/CSV).</li>
+								<li>Browse for your document (PDF preferred if bank is supported).</li>
+								<li>Enter document password (if required).</li>
+								<li>
+									Assign a <strong>Document Owner</strong>.
+								</li>
+								<li>
+									Click <strong>Run Audit</strong> to extract transactions locally.
+								</li>
+							</ol>
+							<p className="text-sm text-green-700 font-medium bg-green-50 inline-block px-3 py-1 rounded-full">
+								Privacy Note: This process is 100% offline. No data leaves your device.
+							</p>
+						</div>
+
+						{/* Step 2: Labelling */}
+						<div className="space-y-3">
+							<h3 className="font-semibold text-xl text-gray-800">2. Labelling Transactions</h3>
+							<p className="text-gray-600">Transactions are grouped by how well the application "remembers" them:</p>
+
+							<div className="grid gap-4 md:grid-cols-2">
+								<LabelCard
+									title="Unrecognized"
+									type="input"
+									desc="Input Required. The app has never seen this vendor before."
+								/>
+								<LabelCard
+									title="Semblance"
+									type="auto"
+									desc="Closely resembles a known vendor (e.g., 'Uber' vs 'Uber Eats'). Review advised."
+								/>
+								<LabelCard
+									title="Ambiguous"
+									type="auto"
+									desc="Vendor is known but associated with multiple accounts historically. App selects latest usage."
+								/>
+								<LabelCard
+									title="Sure"
+									type="auto"
+									desc="Vendor has only ever been associated with one specific account."
+								/>
+							</div>
+
+							{/* Screenshot Placeholder */}
+							<div className="relative w-full h-90 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 mt-4">
+								<Image
+									src="/budget-audit/extracted-widget.png"
+									alt="transaction labelling device intervention"
+									fill
+									className="object-cover p-2"
+								/>
+							</div>
+
+							<div className="text-sm text-gray-600 bg-gray-100 p-4 rounded-lg">
+								<strong>Power User Tips:</strong>
+								<ul className="list-disc pl-5 mt-2 space-y-1">
+									<li>
+										<strong>Splitting:</strong> If a transaction covers two accounts, you can split
+										it indefinitely.
+									</li>
+									<li>
+										<strong>Ignoring:</strong> Expand a transaction and select "Ignore" to exclude
+										it from analytics.
+									</li>
+									<li>
+										<strong>Autofill:</strong> The app will offer to autofill similar transactions
+										as you work.
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						{/* Step 3: Analytics */}
+						<div className="space-y-4">
+							<h3 className="font-semibold text-xl text-gray-800">3. Understanding Analytics</h3>
+							<p className="text-gray-600">Navigate to the Analytics tab to visualize your data.</p>
+
+							<div className="space-y-6">
+								<div>
+									<h4 className="font-bold text-gray-900">Budget Analytics Tab</h4>
+									<p className="text-gray-600 text-sm mb-2">
+										Visualizes your planned resource allocation.
+									</p>
+									<ul className="list-disc pl-5 text-sm text-gray-600">
+										<li>
+											<strong>Budget by Category (Pie):</strong> Percentage of total budget
+											per category.
+										</li>
+										<li>
+											<strong>Account Breakdown (Bar):</strong> Detailed breakdown of accounts
+											within the selected category slice.
+										</li>
+									</ul>
+								</div>
+
+								<div>
+									<h4 className="font-bold text-gray-900">Expenditure Analytics Tab</h4>
+									<p className="text-gray-600 text-sm mb-2">
+										Visualizes actual spending vs. planned budget.
+									</p>
+									<ul className="list-disc pl-5 text-sm text-gray-600">
+										<li>
+											<strong>Expenditure vs. Budget:</strong> Tracks % of budget used over
+											time (tends toward 100%).
+										</li>
+										<li>
+											<strong>Daily Usage:</strong> A bar graph showing exactly what % of the
+											budget was consumed on specific days (useful for spotting weekend
+											spikes).
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					{/* SECTION D: Settings */}
+					<section id="settings" className="scroll-mt-28 space-y-6">
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">D. Settings & Management</h2>
+						<p className="text-gray-600">Access settings via the top-left menu bar.</p>
+
+						<div className="grid md:grid-cols-2 gap-4">
+							<div className="border p-4 rounded-lg">
+								<h4 className="font-bold text-gray-800">Profile & Participants</h4>
+								<p className="text-sm text-gray-600 mt-2">
+									Update your details. Managers can add/edit participants here. (Note: Handover admin
+									rights by editing manager details).
+								</p>
+							</div>
+							<div className="border p-4 rounded-lg">
+								<h4 className="font-bold text-gray-800">Vendor Management</h4>
+								<p className="text-sm text-gray-600 mt-2">
+									View and delete Vendor-Account associations. Deleting here removes the "memory" for
+									future audits.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					{/* SECTION E: Privacy */}
+					<section id="privacy" className="scroll-mt-28 space-y-6 pb-20">
+						<h2 className="text-2xl font-bold text-gray-900 border-b pb-2">E. Privacy Notice</h2>
+
+						<div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+							{/* Header for the Privacy Box */}
+							<div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+								<h3 className="text-sm font-bold text-gray-700 uppercase tracking-wide">Legal Agreement</h3>
+								<p className="text-xs text-gray-500 mt-1">Please review the full terms below.</p>
+							</div>
+
+							{/* The Actual Policy Content */}
+							<div className="p-8 max-h-[800px] overflow-y-auto custom-scrollbar">
+								{/* This div renders your raw HTML string. 
+          The 'prose' class from Tailwind helps fix basic typography if the raw HTML lacks specific styles.
+      */}
+								<div
+									className="prose prose-sm max-w-none text-gray-600 font-sans"
+									dangerouslySetInnerHTML={{ __html: PRIVACY_POLICY_HTML }}
+								/>
+							</div>
+						</div>
+					</section>
+				</main>
+			</div>
+		</div>
+	);
+}
+
+// --- Helper Components ---
+
+function NavLink({ id, active, children }) {
+	const isActive = active === id;
+	return (
+		<Link
+			href={`#${id}`}
+			className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+				isActive ? "bg-blue-50 text-blue-700 border-l-4 border-blue-600" : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+			}`}
+		>
+			{children}
+		</Link>
+	);
+}
+
+function LabelCard({ title, type, desc }) {
+	const isInput = type === "input";
+	return (
+		<div className={`p-4 rounded-lg border ${isInput ? "border-red-200 bg-red-50" : "border-green-200 bg-green-50"}`}>
+			<div className="flex justify-between items-center mb-2">
+				<span className="font-bold text-gray-800">{title}</span>
+				<span className={`text-xs px-2 py-0.5 rounded ${isInput ? "bg-red-200 text-red-800" : "bg-green-200 text-green-800"}`}>
+					{isInput ? "Input Needed" : "Auto"}
+				</span>
+			</div>
+			<p className="text-xs text-gray-600 leading-relaxed">{desc}</p>
+		</div>
+	);
+}
+
+// Paste your full HTML string here inside the backticks
+const PRIVACY_POLICY_HTML = `
+<style>
+  [data-custom-class='body'], [data-custom-class='body'] * {
+          background: transparent !important;
+        }
+        ....

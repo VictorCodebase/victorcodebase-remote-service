@@ -85,11 +85,12 @@ export default function BudgetAuditDocs() {
 					<div className="space-y-4">
 						<h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Getting Started with Budget Audit</h1>
 						<p className="text-lg text-gray-600 leading-relaxed">
-							Welcome to Budget Audit! <br />
-							This documentation should get you started on all you need to start managing your finances better.
+							Welcome to Budget Audit! This documentation should get you started on all you need to start managing
+							your finances better.
 						</p>
+						
 						{/* Screenshot Placeholder */}
-						<div className="relative w-full h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
+						<div className="relative w-full my-6 h-64 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
 							<Image
 								src="/budget-audit/documentation-banner.png"
 								alt="Budget Audit documentation banner"
@@ -97,6 +98,20 @@ export default function BudgetAuditDocs() {
 								className="object-cover rounded-lg p-2"
 							/>
 						</div>
+						<div className="spacer my-6 flex"></div>
+						<div className="download-ms h-15">
+							<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+						<ms-store-badge
+							productid="9pc8tc44lr2d"
+							productname="Budget Audit"
+							window-mode="direct"
+							theme="auto"
+							size="large"
+							language="en-us"
+							animation="on"
+						></ms-store-badge>
+						</div>
+						
 					</div>
 
 					{/* SECTION A: Account Setup */}
@@ -1359,9 +1374,10 @@ export default function BudgetAuditDocs() {
 										<div className="bg-white/50 p-3 rounded border border-blue-100">
 											<p className="font-bold text-blue-900 mb-1">Best Practices</p>
 											<p className="text-blue-800 mt-1 text-xs tracking-wider">
-												Never share account numbers or passwords, account number or any personal information
-												<br/>Be careful as you share personal financial details 
-												
+												Never share account numbers or passwords, account number or any
+												personal information
+												<br />
+												Be careful as you share personal financial details
 											</p>
 										</div>
 									</div>

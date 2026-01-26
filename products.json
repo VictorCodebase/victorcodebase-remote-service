@@ -2,7 +2,7 @@
 	{
 		"id": "budget-audit",
 		"name": "Budget Audit",
-		"version": "v1.0.0 (Coming Soon)",
+		"version": "v1.0.0 (Latest Release)",
 		"description": "A budgeting platform that offers you the opportunity to keep track of your expenditure too. This should help you observe trends in your expenditure that would not have been obvious, on top of budgeting capabilities",
 		"status": "upcoming",
 		"platforms": [
@@ -22,7 +22,7 @@
 	{
 		"id": "budget-audit-multidevice",
 		"name": "Budget Audit Multidevice Support",
-		"version": "Prod",
+		"version": "v1.0.0 (Coming soon)",
 		"description": "A budgeting platform with multi-device support that offers you the opportunity to keep track of your expenditure too. This should help you observe trends in your expenditure that would not have been obvious, on top of budgeting capabilities",
 		"status": "upcoming",
 		"platforms": [
