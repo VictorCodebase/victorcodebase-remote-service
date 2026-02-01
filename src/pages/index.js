@@ -48,7 +48,7 @@ export default function Index({ products }) {
 								Download Resume
 							</a>
 							<a
-								href="https://linkedin.com/in/your-profile"
+								href="https://www.linkedin.com/in/mark-kithinji-68aa14246/"
 								target="_blank"
 								rel="noreferrer"
 								className="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition"
