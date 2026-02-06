@@ -99,7 +99,7 @@ export default function BudgetAuditDocs() {
 							/>
 						</div>
 						<div className="spacer my-6 flex"></div>
-						<div className="download-ms h-15">
+						<div className="download-ms h-25">
 							<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 						<ms-store-badge
 							productid="9pc8tc44lr2d"
@@ -110,12 +110,14 @@ export default function BudgetAuditDocs() {
 							language="en-us"
 							animation="on"
 						></ms-store-badge>
+
+						<h3 className="text-blue-500 underline py-5"><a href="https://apps.microsoft.com/detail/9PC8TC44LR2D">Click here to OPEN MICROSOFT STORE if direct link does not show up</a></h3>
 						</div>
 						
 					</div>
 
 					{/* SECTION A: Account Setup */}
-					<section id="account-setup" className="scroll-mt-28 space-y-6">
+					<section id="account-setup" className="scroll-mt-28 space-y-6 py-4">
 						<div className="flex items-center justify-between">
 							<h2 className="text-2xl font-bold text-gray-900 border-b pb-2 flex-1">A. Setting Up Accounts</h2>
 							<button
