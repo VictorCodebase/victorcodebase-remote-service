@@ -68,7 +68,7 @@
 		"status": "upcoming",
 		"platforms": [{ "name": "All Platforms", "release_date": "Mid-2026", "link": null }],
 		"links": {
-			"documentation": "#",
+			"documentation": "/docs/multiviewer",
 			"repository": "#"
 		},
 		"images": {

@@ -90,7 +90,7 @@ export default function Index({ products }) {
 // --- Component: Product Card ---
 function ProductCard({ product }) {
 	return (
-		<div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300">
+		<div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300" id={product.id}>
 			{/* Product Cover Image with Overlapping Logo */}
 			<div className="relative">
 				{/* Cover Image Area */}
