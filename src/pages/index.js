@@ -20,7 +20,7 @@ export default function Index({ products }) {
 						<div className="w-38 h-38 md:w-40 md:h-40 bg-gray-200 rounded-full border-4 border-gray-100 shadow-inner flex items-center justify-center text-gray-400 overflow-hidden">
 							{/* Replace with actual profile image */}
 							<Image
-								src="/images/profile.jpg"
+								src="/images/profile_1.png"
 								alt="Mark Victor Kithinji"
 								width={160}
 								height={160}
