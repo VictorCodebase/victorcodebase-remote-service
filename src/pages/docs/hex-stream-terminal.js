@@ -159,7 +159,7 @@ export default function HexStreamTerminalDocs() {
 						</p>
 						<div className="relative w-full my-6 h-84 bg-gray-200 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden text-gray-500">
 							<Image
-								src="/custom-terminal/terminal_img_banner_01.jpeg"
+								src="/custom-terminal/terminal_img_banner.jpeg"
 								alt="Hex Stream Terminal banner"
 								fill
 								className="object-cover rounded-lg p-2"
