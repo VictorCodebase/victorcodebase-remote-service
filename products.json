@@ -26,7 +26,7 @@
 		"description": "A fun project that takes hex stream of commands, parse and interprate them now extended to include human readable commands too with the --readable tag",
 		"status": "production",
 		"platforms": [
-			{"name": "Multiplatform - Python environment"}
+			{"name": "Multiplatform - Python env", "link": "https://github.com/VictorCodebase/CustomTerminal/archive/refs/heads/main.zip"}
 		],
 		"links": {
 			"documentation": "/docs/hex-stream-terminal",
@@ -61,19 +61,19 @@
 		}
 	},
 	{
-		"id": "multiviewer",
-		"name": "Multiviewer",
-		"version": "Beta",
-		"description": "A local network media server solution. It allows a 'parent' computer to expose a directory of films to any device on the network. Features peer-to-peer control capabilities, allowing permitted clients to take control of the playback on the server. Ideal for local movie nights and synchronized viewing.",
+		"id": "commitment-app",
+		"name": "Commitment App",
+		"version": "1.1.0",
+		"description": "An accountability application meant to allow you to keep track of your commitments and goals better. Set recurring goals to buid habits, or morning commitments to ensure you dont lose track of what you intended to do.",
 		"status": "upcoming",
-		"platforms": [{ "name": "All Platforms", "release_date": "Mid-2026", "link": null }],
+		"platforms": [{ "name": "Android", "release_date": "14/04/2026", "link": null }],
 		"links": {
-			"documentation": "/docs/multiviewer",
-			"repository": "#"
+			"documentation": "/docs/commitment-app",
+			"repository": "https://github.com/VictorCodebase/Commitment-app"
 		},
 		"images": {
-			"logo": "/images/blank-image.png",
-			"cover": "/images/blank-image.png"
+			"logo": "/commitment-app/logo.png",
+			"cover": "/commitment-app/commitment-app-banner.png"
 		}
 	}
 ]
