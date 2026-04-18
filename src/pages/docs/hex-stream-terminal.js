@@ -495,8 +495,7 @@ cd CustomTerminal`}</CodeBlock>
 									Some commands have a <strong>fixed, strict length</strong> requirement (e.g.{" "}
 									<Code>screen_setup</Code> always requires exactly 3 argument bytes). Others have a{" "}
 									<strong>minimum length</strong>. For example, <Code>draw_line</Code> requires at least
-									enough bytes to encode the position, color, and one character, but the length byte can
-									extend this for variable content. <Code>render_text</Code> accepts up to 99 argument
+									enough bytes to encode the start position (x1, y1), end position (x2, y2), color, and one character. <Code>render_text</Code> accepts up to 99 argument
 									bytes, allowing long text strings.
 								</p>
 								<div className="overflow-x-auto mt-2">
@@ -1025,8 +1024,8 @@ render`}</CodeBlock>
 								hexId="0x03"
 								args={6}
 								signature={["<x1: int>", "<y1: int>", "<x2: int>", "<y2: int>", "<color: string>", "<char: char>"]}
-								example="draw_line 60 2 10 white *"
-								description="Draws a horizontal line starting at (x, y), filled with the specified character and color."
+								example="draw_line 60 2 60 10 white *"
+								description="Draws a vertical line starting at (x1, y1) to (x2, y2), filled with the specified character and color."
 							/>
 							<CommandCard
 								name="render_text"
