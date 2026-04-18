@@ -663,10 +663,10 @@ cd CustomTerminal`}</CodeBlock>
 												["0x41", "Arg 4 — char", "0x41 = ASCII 'A'"],
 												["0x03", "Command ID", "draw_line"],
 												["0x06", "Arg length", "6 argument bytes follow"],
-												["0x3C", "Arg 1 — x", "0x3C = 60"],
-												["0x02", "Arg 2 — y", "0x02 = 2"],
-												["0x03", "Arg 3 — length", "0x03 = 3"],
-												["0x0A", "Arg 4 — extra", "0x0A = 10"],
+												["0x3C", "Arg 1 — x1", "0x3C = 60"],
+												["0x02", "Arg 2 — y1", "0x02 = 2"],
+												["0x03", "Arg 3 — x2", "0x03 = 3"],
+												["0x0A", "Arg 4 — y2", "0x0A = 10"],
 												["0x07", "Arg 5 — color", "0x07 → white"],
 												["0x2A", "Arg 6 — char", "0x2A = ASCII '*'"],
 												["0xFF", "End of File", "Stream complete"],
@@ -854,12 +854,12 @@ cd CustomTerminal`}</CodeBlock>
 												[
 													"0x03 0x06 0x3C 0x02 0x03 0x0A 0x07 0x2A",
 													"draw_line",
-													"x=60, y=2, length=3, extra=10, white, '*'",
+													"x1=60, y1=2, x2=3, y2=10, white, '*'",
 												],
 												[
 													"0x03 0x06 0x0A 0x02 0x0A 0x16 0x01 0x2A",
 													"draw_line",
-													"x=10, y=2, length=10, extra=22, red (0x01), '*'",
+													"x1=10, y1=2, x2=10, y2=22, red (0x01), '*'",
 												],
 												[
 													"0x04 0x14 0x1E 0x0C 0x06 …0x21 0x21",
@@ -1023,10 +1023,10 @@ render`}</CodeBlock>
 							<CommandCard
 								name="draw_line"
 								hexId="0x03"
-								args={5}
-								signature={["<x: int>", "<y: int>", "<length: int>", "<color: string>", "<char: char>"]}
+								args={6}
+								signature={["<x1: int>", "<y1: int>", "<x2: int>", "<y2: int>", "<color: string>", "<char: char>"]}
 								example="draw_line 60 2 10 white *"
-								description="Draws a horizontal line of the given length starting at (x, y), filled with the specified character and color."
+								description="Draws a horizontal line starting at (x, y), filled with the specified character and color."
 							/>
 							<CommandCard
 								name="render_text"
@@ -1273,7 +1273,7 @@ render`}</CodeBlock>
 									Set up a screen and draw a line of asterisks along the top.
 								</p>
 								<CodeBlock>{`screen_setup 80 24 16colors
-draw_line 0 0 80 white *
+draw_line 0 0 80 0 white *
 render`}</CodeBlock>
 							</div>
 
