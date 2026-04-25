@@ -3,8 +3,19 @@ import fs from "fs";
 import path from "path";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import ProjectsSection from "../components/ProjectsSection";
 
-export default function Index({ products }) {
+// Lazy-load the modal so it's not in the initial bundle
+const CredentialsModal = dynamic(() => import("../components/CredentialsModal"), { ssr: false });
+
+// How many credentials to show in the strip before truncating
+const STRIP_LIMIT = 5;
+
+export default function Index({ products, credentials, projects }) {
+	const [modalOpen, setModalOpen] = useState(false);
+
 	return (
 		<div className="min-h-screen bg-gray-50 font-sans text-gray-800">
 			<Head>
@@ -14,44 +25,40 @@ export default function Index({ products }) {
 
 			{/* --- Header / Bio Section --- */}
 			<section className="bg-white border-b border-gray-200">
-				<div className="max-w-5xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8">
-					{/* Profile Image Placeholder */}
+				<div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center gap-6">
+					{/* Profile Image */}
 					<div className="flex-shrink-0">
-						<div className="w-38 h-38 md:w-40 md:h-40 bg-gray-200 rounded-full border-4 border-gray-100 shadow-inner flex items-center justify-center text-gray-400 overflow-hidden">
-							{/* Replace with actual profile image */}
+						<div className="w-20 h-20 rounded-full border-2 border-gray-100 shadow overflow-hidden">
 							<Image
 								src="/images/profile_1.png"
 								alt="Mark Victor Kithinji"
-								width={160}
-								height={160}
+								width={80}
+								height={80}
 								className="object-cover"
 							/>
 						</div>
 					</div>
 
-					{/* Bio Text */}
-					<div className="text-center md:text-left flex-1">
-						<h1 className="text-3xl md:text-3	xl font-bold text-gray-600 mb-4">VictorCodebase | Product Repository</h1>
-						<p className="text-md text-gray-600 mb-6 leading-relaxed max-w-2xl">
-							Hello, I am Mark Kithinji, a software developer in Kenya.
-							<br /> Here is a repository of all products, should you find any useful, please consider giving it a
-							star on github!
-						</p>
+					{/* Bio + Credentials */}
+					<div className="flex-1 min-w-0 text-center md:text-left">
+						{/* Name + bio */}
+						<h1 className="text-xl font-bold text-gray-800 mb-0.5">VictorCodebase | Product Repository</h1>
+						<p className="text-sm text-gray-500 mb-4">Mark Kithinji — Software Developer based in Kenya.</p>
 
 						{/* CTA Buttons */}
-						<div className="flex flex-wrap justify-center md:justify-start gap-4">
+						<div className="flex flex-wrap justify-center md:justify-start gap-3 mb-5">
 							<a
 								href="/Mark_Victor_Kithinji_Resume.pdf"
 								download
-								className="px-6 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition"
+								className="px-4 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition"
 							>
-								Download Resume
+								Resume
 							</a>
 							<a
 								href="https://www.linkedin.com/in/mark-kithinji-68aa14246/"
 								target="_blank"
 								rel="noreferrer"
-								className="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition"
+								className="px-4 py-1.5 bg-white border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50 transition"
 							>
 								LinkedIn
 							</a>
@@ -59,10 +66,60 @@ export default function Index({ products }) {
 								href="https://github.com/VictorCodebase"
 								target="_blank"
 								rel="noreferrer"
-								className="px-6 py-2 bg-gray-800 text-white rounded-md font-medium hover:bg-gray-900 transition"
+								className="px-4 py-1.5 bg-gray-800 text-white rounded-md text-sm font-medium hover:bg-gray-900 transition"
 							>
 								GitHub
 							</a>
+						</div>
+
+						{/* Credentials Strip */}
+						<div className="flex items-center gap-0 min-w-0">
+							<span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-3 flex-shrink-0">
+								Credentials
+							</span>
+
+							{/* Scrollable, non-wrapping strip */}
+							<div className="flex items-center gap-2 overflow-hidden min-w-0 flex-1">
+								{credentials.slice(0, STRIP_LIMIT).map((cred) => (
+									<a
+										key={cred.id}
+										href={cred.link}
+										target="_blank"
+										rel="noreferrer"
+										title={cred.title}
+										className="flex-shrink-0 flex items-center gap-1.5 text-xs bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 text-gray-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition whitespace-nowrap"
+									>
+										<div className="relative w-4 h-4 flex-shrink-0">
+											<Image
+												src={cred.image}
+												alt={cred.title}
+												fill
+												className="object-contain"
+											/>
+										</div>
+										<span className="max-w-[120px] overflow-hidden text-ellipsis">
+											{cred.title}
+										</span>
+									</a>
+								))}
+							</div>
+
+							{credentials.length > STRIP_LIMIT && (
+								<button
+									onClick={() => setModalOpen(true)}
+									className="flex-shrink-0 ml-2 text-xs text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap"
+								>
+									+{credentials.length - STRIP_LIMIT} more →
+								</button>
+							)}
+							{credentials.length <= STRIP_LIMIT && (
+								<button
+									onClick={() => setModalOpen(true)}
+									className="flex-shrink-0 ml-2 text-xs text-blue-500 hover:text-blue-700 font-medium whitespace-nowrap"
+								>
+									View all →
+								</button>
+							)}
 						</div>
 					</div>
 				</div>
@@ -79,10 +136,18 @@ export default function Index({ products }) {
 				</div>
 			</main>
 
+			{/* --- Projects & Collaborations --- */}
+			<div className="border-t border-gray-200">
+				<ProjectsSection projects={projects} />
+			</div>
+
 			{/* Footer */}
 			<footer className="bg-gray-100 py-8 text-center text-gray-500 text-sm">
 				<p>&copy; {new Date().getFullYear()} VictorCodebase. All rights reserved.</p>
 			</footer>
+
+			{/* Credentials Modal */}
+			{modalOpen && <CredentialsModal credentials={credentials} onClose={() => setModalOpen(false)} />}
 		</div>
 	);
 }
@@ -90,10 +155,12 @@ export default function Index({ products }) {
 // --- Component: Product Card ---
 function ProductCard({ product }) {
 	return (
-		<div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300" id={product.id}>
-			{/* Product Cover Image with Overlapping Logo */}
+		<div
+			className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300"
+			id={product.id}
+		>
+			{/* Cover + Logo */}
 			<div className="relative">
-				{/* Cover Image Area */}
 				<div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative group overflow-hidden">
 					{product.images?.cover ? (
 						<Image
@@ -105,11 +172,9 @@ function ProductCard({ product }) {
 					) : (
 						<span className="text-gray-400 font-medium">{product.name}</span>
 					)}
-					{/* Version Badge */}
 					<div className="absolute top-4 right-4 bg-gray-900 text-white text-xs px-2 py-1 rounded z-10">{product.version}</div>
 				</div>
 
-				{/* Overlapping Logo - positioned to overlap the cover */}
 				{product.images?.logo && (
 					<div className="absolute -bottom-10 left-6 w-20 h-20 bg-white rounded-full shadow-lg border-4 border-white flex items-center justify-center z-20">
 						<Image
@@ -123,18 +188,31 @@ function ProductCard({ product }) {
 				)}
 			</div>
 
-			{/* Content Area - with top padding to account for overlapping logo */}
+			{/* Content */}
 			<div className="p-6 pt-14 flex-1 flex flex-col">
-				{/* Header */}
-				<div className="mb-4">
+				<div className="mb-3">
 					<h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
 				</div>
 
-				{/* Description */}
-				<p className="text-gray-600 text-sm mb-6 flex-1 leading-relaxed">{product.description}</p>
+				{/* Description — clamped to 2 lines */}
+				<p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">{product.description}</p>
+
+				{/* Stack */}
+				{product.stack?.length > 0 && (
+					<div className="mb-4">
+						<p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Stack</p>
+						<div className="flex flex-wrap gap-1.5">
+							{product.stack.map((tech) => (
+								<span key={tech} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+									{tech}
+								</span>
+							))}
+						</div>
+					</div>
+				)}
 
 				{/* Platforms */}
-				<div className="mb-6">
+				<div className="mb-5">
 					<p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Platforms</p>
 					<div className="space-y-2">
 						{product.platforms.map((plat, index) => (
@@ -156,13 +234,12 @@ function ProductCard({ product }) {
 				</div>
 
 				{/* Action Links */}
-				<div className="pt-4 border-t border-gray-100 flex gap-3">
+				<div className="pt-4 border-t border-gray-100 flex gap-3 mt-auto">
 					{product.links.documentation && (
 						<Link href={product.links.documentation} className="text-sm text-blue-300 hover:text-blue-600 font-medium">
 							Read Documentation
 						</Link>
 					)}
-
 					{product.links.article && (
 						<>
 							<p className="text-sm font-medium">|</p>
@@ -197,14 +274,16 @@ function ProductCard({ product }) {
 
 // --- Data Fetching ---
 export async function getStaticProps() {
-	// Read the JSON file from the root directory
-	const filePath = path.join(process.cwd(), "products.json");
-	const jsonData = fs.readFileSync(filePath);
-	const products = JSON.parse(jsonData);
+	const productsPath = path.join(process.cwd(), "products.json");
+	const products = JSON.parse(fs.readFileSync(productsPath));
+
+	const credentialsPath = path.join(process.cwd(), "certifications.json");
+	const credentials = JSON.parse(fs.readFileSync(credentialsPath));
+
+	const projectsPath = path.join(process.cwd(), "projects.json");
+	const projects = JSON.parse(fs.readFileSync(projectsPath));
 
 	return {
-		props: {
-			products,
-		},
+		props: { products, credentials, projects },
 	};
 }

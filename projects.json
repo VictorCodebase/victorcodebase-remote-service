@@ -1,0 +1,64 @@
+[
+	{
+		"id": "afraken",
+		"name": "Association of France Alumni in Kenya",
+		"shortName": "AFRAKEN",
+		"date": "August 2024",
+		"description": "Built a web application for the Association of France Alumni in Kenya — a platform to connect alumni, share events, and manage membership.",
+		"type": "Internship",
+		"contributors": [
+			{ "name": "Mark Victor Kithinji", "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/" },
+			{ "name": "Samuel Gicheha", "link": "https://www.linkedin.com/in/sirgicheha/" },
+			{ "name": "Allan Njoroge", "link": "https://www.linkedin.com/in/allan-njoroge-868542309/" },
+			{ "name": "Derrick Richard", "link": "https://www.linkedin.com/in/derickrichards/" },
+			{ "name": "Rony Maruga", "link": "https://www.linkedin.com/in/rony-maruga-a7603b2a1/" }
+		],
+		"links": {
+			"live": "https://afraken.org/",
+			"article": "https://www.linkedin.com/feed/update/urn:li:activity:7221769409701265409/"
+		},
+		"gallery": [
+			"https://github.com/user-attachments/assets/7bfda31a-e3e1-4c65-bda0-96d722da4920",
+			"https://github.com/user-attachments/assets/f55f82dd-9043-4d08-90f5-60b6dadcaade"
+		]
+	},
+	{
+		"id": "ecopulse",
+		"name": "Ecopulse Alliance",
+		"shortName": "Ecopulse",
+		"date": "September 2024",
+		"description": "Web application for Ecopulse Alliance, a social impact initiative in East Africa — built to support their mission and digital presence after a referral from AFRAKEN.",
+		"type": "Freelance",
+		"contributors": [{ "name": "Mark Victor Kithinji", "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/" }],
+		"links": {
+			"live": "https://ecopulse.roriama.com/"
+		},
+		"gallery": [
+			"https://github.com/user-attachments/assets/2d159aac-e1f6-4386-a1b3-35f4faf1043c",
+			"https://github.com/user-attachments/assets/16e4452c-e92f-4e1c-aecf-2d29e23bb23a",
+			"https://github.com/user-attachments/assets/23ccdeae-3358-49fd-9876-447e95e97734",
+			"https://github.com/user-attachments/assets/4a207bea-e4f4-4b99-96a6-b094d92171e0"
+		]
+	},
+	{
+		"id": "meadowai",
+		"name": "MeadowAI — Meadow Intelligence Suite",
+		"shortName": "MeadowAI",
+		"date": "January 2025",
+		"description": "An agricultural intelligence platform helping farm managers in developing regions navigate climate volatility and market uncertainty through ML-powered crop trend analysis and risk modelling.",
+		"type": "Project",
+		"contributors": [
+			{ "name": "Mark Victor Kithinji", "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/" },
+            { "name": "Geoffrey Kirumba", "link":"https://www.linkedin.com/in/geoffrey-kirumba-2a8690272/"},
+			{ "name": "Samuel Gicheha", "link": "https://www.linkedin.com/in/sirgicheha/" },
+			{ "name": "Allan Njoroge", "link": "https://www.linkedin.com/in/allan-njoroge-868542309/" }
+		],
+		"links": {},
+		"gallery": [
+			"https://github.com/user-attachments/assets/e77de4c7-3492-4267-99af-024d2c723202",
+			"https://github.com/user-attachments/assets/7f66e915-079a-4f70-9e42-e688ce3acf5a",
+			"https://github.com/user-attachments/assets/6876aec1-4f54-40dc-a0df-6dbab97ab5d4",
+			"https://github.com/user-attachments/assets/c4c877ea-ffd3-4b28-b23f-7213d4cfb4ef"
+		]
+	}
+]
