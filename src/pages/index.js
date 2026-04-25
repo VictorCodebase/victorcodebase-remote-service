@@ -10,9 +10,6 @@ import ProjectsSection from "../components/ProjectsSection";
 // Lazy-load the modal so it's not in the initial bundle
 const CredentialsModal = dynamic(() => import("../components/CredentialsModal"), { ssr: false });
 
-// How many credentials to show in the strip before truncating
-const STRIP_LIMIT = 5;
-
 export default function Index({ products, credentials, projects }) {
 	const [modalOpen, setModalOpen] = useState(false);
 
@@ -25,7 +22,7 @@ export default function Index({ products, credentials, projects }) {
 
 			{/* --- Header / Bio Section --- */}
 			<section className="bg-white border-b border-gray-200">
-				<div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center gap-6">
+				<div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-start items-center gap-6">
 					{/* Profile Image */}
 					<div className="flex-shrink-0">
 						<div className="w-20 h-20 rounded-full border-2 border-gray-100 shadow overflow-hidden">
@@ -73,21 +70,26 @@ export default function Index({ products, credentials, projects }) {
 						</div>
 
 						{/* Credentials Strip */}
-						<div className="flex items-center gap-0 min-w-0">
-							<span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-3 flex-shrink-0">
-								Credentials
-							</span>
-
-							{/* Scrollable, non-wrapping strip */}
-							<div className="flex items-center gap-2 overflow-hidden min-w-0 flex-1">
-								{credentials.slice(0, STRIP_LIMIT).map((cred) => (
+						<div>
+							<div className="flex items-center gap-2 mb-2">
+								<span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+									Credentials
+								</span>
+								<button
+									onClick={() => setModalOpen(true)}
+									className="text-xs text-blue-500 hover:text-blue-700 font-medium"
+								>
+									View all →
+								</button>
+							</div>
+							<div className="flex flex-wrap gap-2">
+								{credentials.slice(0, 3).map((cred) => (
 									<a
 										key={cred.id}
 										href={cred.link}
 										target="_blank"
 										rel="noreferrer"
-										title={cred.title}
-										className="flex-shrink-0 flex items-center gap-1.5 text-xs bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 text-gray-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition whitespace-nowrap"
+										className="flex items-center gap-1.5 text-xs bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 text-gray-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition"
 									>
 										<div className="relative w-4 h-4 flex-shrink-0">
 											<Image
@@ -97,29 +99,10 @@ export default function Index({ products, credentials, projects }) {
 												className="object-contain"
 											/>
 										</div>
-										<span className="max-w-[120px] overflow-hidden text-ellipsis">
-											{cred.title}
-										</span>
+										<span>{cred.title}</span>
 									</a>
 								))}
 							</div>
-
-							{credentials.length > STRIP_LIMIT && (
-								<button
-									onClick={() => setModalOpen(true)}
-									className="flex-shrink-0 ml-2 text-xs text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap"
-								>
-									+{credentials.length - STRIP_LIMIT} more →
-								</button>
-							)}
-							{credentials.length <= STRIP_LIMIT && (
-								<button
-									onClick={() => setModalOpen(true)}
-									className="flex-shrink-0 ml-2 text-xs text-blue-500 hover:text-blue-700 font-medium whitespace-nowrap"
-								>
-									View all →
-								</button>
-							)}
 						</div>
 					</div>
 				</div>
