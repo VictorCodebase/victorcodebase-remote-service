@@ -40,7 +40,7 @@ export default function Index({ products, credentials, projects }) {
 					<div className="flex-1 min-w-0 text-center md:text-left">
 						{/* Name + bio */}
 						<h1 className="text-xl font-bold text-gray-800 mb-0.5">VictorCodebase | Product Repository</h1>
-						<p className="text-sm text-gray-500 mb-4">Mark Kithinji — Software Developer based in Kenya.</p>
+						<p className="text-sm text-gray-500 mb-4">Mark Kithinji: Software engineer.</p>
 
 						{/* CTA Buttons */}
 						<div className="flex flex-wrap justify-center md:justify-start gap-3 mb-5">
