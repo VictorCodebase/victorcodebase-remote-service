@@ -4,14 +4,16 @@
 		"id": "ms-open-source",
 		"title": "Microsoft Open Source Contributor",
 		"image": "https://github.com/VictorCodebase/VictorCodebase/assets/135356007/f034a4c7-7672-4bb5-834b-787da931b0fd",
-		"link": "https://www.credly.com/badges/63813a12-dd67-41fc-a2bb-eef02912e696/public_url"
+		"link": "https://www.credly.com/badges/63813a12-dd67-41fc-a2bb-eef02912e696/public_url",
+		"issuer": "Microsoft Azure Americas team"
 	},
 	{
 		"type": "badge",
 		"id": "ai-900",
 		"title": "AI-900: Azure AI Fundamentals",
 		"image": "https://github.com/user-attachments/assets/36f71508-e501-4405-8b63-a2ab76adb003",
-		"link": "https://learn.microsoft.com/api/credentials/share/en-us/MarkKithinji-9759/8FCA11238064E0D3?sharingId=447E623FC6BA2D63"
+		"link": "https://learn.microsoft.com/api/credentials/share/en-us/MarkKithinji-9759/8FCA11238064E0D3?sharingId=447E623FC6BA2D63",
+		"issuer": "Microsoft Learn"
 	},
 	{
 		"type": "certification",
@@ -19,7 +21,7 @@
 		"title": "Graph Search, Shortest Paths, and Data Structures",
 		"image": "https://user-images.githubusercontent.com/135356007/278609181-0e653377-63d2-4024-a3b3-6e9902872ecc.png",
 		"link": "https://www.coursera.org/account/accomplishments/certificate/B3BB2FCK5QLD",
-		"issuer": "Coursera"
+		"issuer": "Stanford Online via Coursera"
 	},
 	{
 		"type": "certification",
@@ -27,7 +29,7 @@
 		"title": "Divide and Conquer, Sorting and Searching, and Randomized Algorithms",
 		"image": "https://user-images.githubusercontent.com/135356007/278609168-6af2e4df-87cc-4b7d-8365-87a39357f6b4.png",
 		"link": "https://www.coursera.org/account/accomplishments/certificate/YFPULNNAMAZ5",
-		"issuer": "Coursera"
+		"issuer": "Stanford Online via Coursera"
 	},
 	{
 		"type": "certification",
@@ -35,7 +37,7 @@
 		"title": "Natural Language Processing in TensorFlow",
 		"image": "https://github.com/user-attachments/assets/0dcd6332-8af4-47b7-962f-2e8fae890ba6",
 		"link": "https://www.coursera.org/account/accomplishments/verify/HP9U0MFG4E8J",
-		"issuer": "Coursera"
+		"issuer": "Deeplearning.AI via Coursera"
 	},
 	{
 		"type": "certification",
@@ -51,7 +53,7 @@
 		"title": "Foundations of User Experience (UX) Design",
 		"image": "https://user-images.githubusercontent.com/135356007/278609018-c77caa46-04f6-4b47-b112-402d7d7d5322.png",
 		"link": "https://www.coursera.org/account/accomplishments/certificate/BV4HXUE5AFKY",
-		"issuer": "Coursera"
+		"issuer": "Google via Coursera"
 	},
 	{
 		"type": "certification",
@@ -59,6 +61,6 @@
 		"title": "Create High-Fidelity Designs and Prototypes in Figma",
 		"image": "https://user-images.githubusercontent.com/135356007/278608989-35985dd9-7570-46b5-a4c3-1af3ab2527af.png",
 		"link": "https://www.coursera.org/account/accomplishments/certificate/4BKD6DLKD3QE",
-		"issuer": "Coursera"
+		"issuer": "Google via Coursera"
 	}
 ]
