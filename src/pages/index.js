@@ -108,7 +108,14 @@ export default function Index({ products, credentials, projects }) {
 				</div>
 			</section>
 
-			{/* --- Products Section --- */}
+			
+
+			{/* --- Projects & Collaborations --- */}
+			<div className="border-t border-gray-200">
+				<ProjectsSection projects={projects} />
+			</div>
+
+{/* --- Products Section --- */}
 			<main className="max-w-6xl mx-auto px-6 py-12">
 				<h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-blue-600 pl-4">Software Products</h2>
 
@@ -118,11 +125,6 @@ export default function Index({ products, credentials, projects }) {
 					))}
 				</div>
 			</main>
-
-			{/* --- Projects & Collaborations --- */}
-			<div className="border-t border-gray-200">
-				<ProjectsSection projects={projects} />
-			</div>
 
 			{/* Footer */}
 			<footer className="bg-gray-100 py-8 text-center text-gray-500 text-sm">
