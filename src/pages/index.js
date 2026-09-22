@@ -238,6 +238,7 @@ function ProductCard({ product }) {
 							</a>
 						</>
 					)}
+					
 					{product.links.repository && product.links.repository !== "#" && (
 						<>
 							<p className="text-sm font-medium">|</p>
