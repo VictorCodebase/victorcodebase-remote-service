@@ -83,6 +83,16 @@ function ProjectCard({ project }) {
                             Open Project ↗
                         </a>
                     )}
+                    {project.links?.about && (
+                        <a
+                            href={project.links.about}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                        >
+                            About Project ↗
+                        </a>
+                    )}
                     {project.links?.article && (
                         <>
                             {project.links?.live && (
