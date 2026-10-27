@@ -235,7 +235,7 @@ export default function AfrakenProject() {
                             experience, and a free-tier VM. <br /> This page
                             walks through the decisions, the measurements, and
                             how we managed to scale a WordPress site on a{" "}
-                            <i>1 GB free-tier server</i> to handle spiky
+                            <i>1 GB free-tier server</i> to handle read-heavy
                             traffic, cutting request latency from 114s to under
                             5s..
                         </p>
