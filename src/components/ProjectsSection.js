@@ -2,9 +2,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 function ProjectCard({ project }) {
-	const [imgIdx, setImgIdx] = useState(0);
+    const [imgIdx, setImgIdx] = useState(0);
 
-	return (
+    return (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300">
             {/* Gallery preview */}
             {project.gallery?.length > 0 && (
@@ -125,11 +125,10 @@ function ProjectCard({ project }) {
                     )}
                     {!project.links?.live &&
                         !project.links?.article &&
-                        !project.links?.documentation && 
-						(
+                        !project.links?.documentation && (
                             <span className="text-xs text-gray-400 italic">
                                 Links coming soon
-                            </span>,
+                            </span>
                         )}
                 </div>
             </div>
@@ -138,15 +137,20 @@ function ProjectCard({ project }) {
 }
 
 export default function ProjectsSection({ projects }) {
-	return (
-		<section className="max-w-6xl mx-auto px-6 py-12">
-			<h2 className="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-gray-400 pl-4">Projects & Collaborations</h2>
-			<p className="text-sm text-gray-500 mb-8 pl-5">Internships, Freelance work and collaborative builds I&apos;ve been a part of.</p>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{projects.map((project) => (
-					<ProjectCard key={project.id} project={project} />
-				))}
-			</div>
-		</section>
-	);
+    return (
+        <section className="max-w-6xl mx-auto px-6 py-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-gray-400 pl-4">
+                Projects & Collaborations
+            </h2>
+            <p className="text-sm text-gray-500 mb-8 pl-5">
+                Internships, Freelance work and collaborative builds I&apos;ve
+                been a part of.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                ))}
+            </div>
+        </section>
+    );
 }

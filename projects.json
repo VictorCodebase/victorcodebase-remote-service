@@ -4,7 +4,7 @@
         "name": "Wildfire Risk and Progression Modelling (WRaP)",
         "shortName": "WRAP",
         "date": "July 2025",
-        "description": "A wildfire risk and spread behaviour modelling tool designed to better equip first responders to handle forest fires. Built upon Cellular Automata and Rothermel fire equations, WRaP can both assess risk, and simulate fire spread with reasonable accuracy.",
+        "description": "Java/Spring Boot backend for a wildfire spread simulator (cellular automata driven by Rothermel equations) that helps responders decide where to place early-detection systems. The physics engine is validated within ±5% of Andrews (2018) reference values, backed by 100+ tests and a 7-stage CI pipeline. Requirements were grounded in field research at Karura Forest.",
         "type": "Research",
         "contributors": [
             {
@@ -43,10 +43,9 @@
             "live": "https://ecopulse.roriama.com/"
         },
         "gallery": [
-            "https://github.com/user-attachments/assets/2d159aac-e1f6-4386-a1b3-35f4faf1043c",
-            "https://github.com/user-attachments/assets/16e4452c-e92f-4e1c-aecf-2d29e23bb23a",
-            "https://github.com/user-attachments/assets/23ccdeae-3358-49fd-9876-447e95e97734",
-            "https://github.com/user-attachments/assets/4a207bea-e4f4-4b99-96a6-b094d92171e0"
+            "/ecopulse/Screenshot_20261031_200731.png",
+            "/ecopulse/Screenshot_20261031_201159",
+            "/ecopulse/Screenshot_20261031_201310"
         ]
     },
 
@@ -55,7 +54,7 @@
         "name": "Association of France Alumni in Kenya",
         "shortName": "AFRAKEN",
         "date": "August 2024",
-        "description": "Built a web application for the Association of France Alumni in Kenya — a platform to connect alumni, share events, and manage membership.",
+        "description": "Scaled a WordPress site on a 1 GB free-tier server to handle read-heavy traffic, cutting request latency from 114s to under 5s.",
         "type": "Internship",
         "contributors": [
             {
@@ -95,7 +94,7 @@
         "name": "MeadowAI | Meadow Intelligence Suite",
         "shortName": "MeadowAI",
         "date": "January 2025",
-        "description": "An agricultural intelligence platform helping farm managers in developing regions navigate climate volatility and market uncertainty through ML-powered crop trend analysis and risk modelling.",
+        "description": "An agricultural intelligence platform. Replaced a ML approach that needed ~67,500 hand-collected samples with climate envelope modelling on freely available historical weather data, making crop-suitability prediction viable where African agricultural data barely exists. Field visits to farms redirected the product to farm managers, and an LLM layer (Llama via Groq) turns model output into profitability insights.",
         "type": "Project",
         "contributors": [
             {
@@ -116,7 +115,8 @@
             }
         ],
         "links": {
-            "live": "https://github.com/MeedowDev"
+            "about": "/learn-about/mis-project",
+            "documentation": "https://github.com/MeedowDev"
         },
         "gallery": [
             "/meadow/Screenshot_20260922_190719.png",
