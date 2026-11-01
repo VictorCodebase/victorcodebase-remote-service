@@ -196,15 +196,12 @@ export default function AfrakenProject() {
                         >
                             VictorCodebase
                         </Link>
-                        <span className="text-gray-300">/</span>
-                        <span className="text-gray-500 text-sm">
-                            Learn about
-                        </span>
+                       
                         <span className="text-gray-300">/</span>
                         <h1 className="font-semibold text-gray-700">AFRAKEN</h1>
                     </div>
                     <span className="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-500">
-                        Case study
+                        August 2024
                     </span>
                 </div>
             </header>

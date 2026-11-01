@@ -1,5 +1,50 @@
 [
     {
+        "id": "aws-community-day",
+        "name": "AWS Community Day Speaker (Pwani edition)",
+        "shortName": "aws-talk",
+        "date": "July 4, 2026",
+        "description": "30-minute talk on building reliable systems under scarce compute and data. Cut worst-case requests from 114 s to under 5 s on a 1 GB server, and avoided 67,500+ hand-collected training rows by changing the modelling approach.",
+        "type": "Speaking",
+        "contributors": [
+            {
+                "name": "Mark Victor Kithinji",
+                "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/"
+            }
+        ],
+        "links": {
+            "about": "/learn-about/aws-talk"
+        },
+        "gallery": [
+            "/learn-about/aws-talk/aws-community-day-cert.png",
+            "/learn-about/aws-talk/0J0A1024.jpg"
+        ]
+    },
+
+    {
+        "id": "ecopulse",
+        "name": "Ecopulse Alliance",
+        "shortName": "Ecopulse",
+        "date": "September 2024",
+        "description": "Web application for Ecopulse Alliance, a social impact initiative in East Africa. Built to support their mission and digital presence after a referral from AFRAKEN.",
+        "type": "Freelance",
+        "contributors": [
+            {
+                "name": "Mark Victor Kithinji",
+                "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/"
+            }
+        ],
+        "links": {
+            "live": "https://ecopulse.roriama.com/"
+        },
+        "gallery": [
+            "/ecopulse/Screenshot_20261031_200731.png",
+            "/ecopulse/Screenshot_20261031_201159.png",
+            "/ecopulse/Screenshot_20261031_201310.png"
+        ]
+    },
+
+    {
         "id": "wrap",
         "name": "Wildfire Risk and Progression Modelling (WRaP)",
         "shortName": "WRAP",
@@ -22,30 +67,7 @@
         },
         "gallery": [
             "/wrap/Screenshot 2026-06-15 121807.png",
-            "/wrap/Screenshot 2026-06-15 122026.png",
             "/wrap/Screenshot 2026-06-15 122026.png"
-        ]
-    },
-    {
-        "id": "ecopulse",
-        "name": "Ecopulse Alliance",
-        "shortName": "Ecopulse",
-        "date": "September 2024",
-        "description": "Web application for Ecopulse Alliance, a social impact initiative in East Africa. Built to support their mission and digital presence after a referral from AFRAKEN.",
-        "type": "Freelance",
-        "contributors": [
-            {
-                "name": "Mark Victor Kithinji",
-                "link": "https://www.linkedin.com/in/mark-kithinji-68aa14246/"
-            }
-        ],
-        "links": {
-            "live": "https://ecopulse.roriama.com/"
-        },
-        "gallery": [
-            "/ecopulse/Screenshot_20261031_200731.png",
-            "/ecopulse/Screenshot_20261031_201159",
-            "/ecopulse/Screenshot_20261031_201310"
         ]
     },
 

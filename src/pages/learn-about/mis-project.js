@@ -239,7 +239,7 @@ export default function MISArticle() {
                         </h1>
                     </div>
                     <span className="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-500">
-                        Technical record
+                        January 2025
                     </span>
                 </div>
             </header>
