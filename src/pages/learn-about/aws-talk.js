@@ -3,8 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const SLIDES_URL =
-    "https://www.figma.com/slides/okPcFALW5VtcUPvQcaOKhN/Untitled?t=5UsKep8meoLjv54Y-6"; 
+/* ------------------------------------------------------------------
+   CONFIG: swap these for your real asset paths / links.
+   Files live in /public. Leave SLIDES_URL empty to hide the button.
+------------------------------------------------------------------- */
+const SLIDES_URL = ""; // paste the Figma slides share link here
 const CREDENTIAL_URL =
     "https://creds.awscommunityday.com/c/ACD-ACDKEN-2026-SPK-0003";
 const CREDENTIAL_CODE = "ACD-ACDKEN-2026-SPK-0003";
@@ -12,13 +15,13 @@ const NOTEBOOK_URL =
     "https://colab.research.google.com/drive/1whLXsTevBXL6wF1H2G04e6QZo1m2LaRB#scrollTo=mgjoSVWQUQ_q";
 
 const IMG = {
-    award: "/learn-about/aws-talk/0J0A1024.jpg",
-    certificate: "/learn-about/aws-talk/aws-community-day-cert.png",
+    award: "/learn-about/aws-community-day/speaker-award.jpg",
+    certificate: "/learn-about/aws-community-day/certificate.png",
     misEnvelope: "/learn-about/aws-community-day/mis-climate-envelope.png",
     gtmetrixBaseline: "/learn-about/aws-community-day/gtmetrix-baseline.png",
-    gtmetrixCdn: "/learn-about/afraken/gtmetrix-report.png",
-    jmeterBefore: "/learn-about/afraken/jmeter-before.png",
-    jmeterAfter: "/learn-about/afraken/jmeter-after.png",
+    gtmetrixCdn: "/learn-about/aws-community-day/gtmetrix-cdn.png",
+    jmeterBefore: "/learn-about/aws-community-day/jmeter-before.png",
+    jmeterAfter: "/learn-about/aws-community-day/jmeter-after.png",
 };
 
 const SECTIONS = [
@@ -249,16 +252,16 @@ export default function AwsCommunityDayTalk() {
                             >
                                 Verify speaker credential ↗
                             </a>
-                            <iframe
-                                style={{
-                                    border: "1px solid rgba(0, 0, 0, 0.1)",
-                                }}
-                                width="800"
-                                height="450"
-                                src="https://embed.figma.com/slides/3P7Yj7ZC4H116ycGIxB3bE/AWS-talk--Copy-?node-id=25-20&embed-host=share"
-                                allowFullScreen
-                                title="AWS Talk Figma Slides"
-                            ></iframe>
+                            {SLIDES_URL && (
+                                <a
+                                    href={SLIDES_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                                >
+                                    View the slides ↗
+                                </a>
+                            )}
                         </div>
                     </div>
 
@@ -267,7 +270,7 @@ export default function AwsCommunityDayTalk() {
                         <div className="grid sm:grid-cols-3 gap-4">
                             <Stat
                                 value="114 s → 4.8 s"
-                                label="Worst-case request time on a 1 GB server (JMeter, AFRAKEN)"
+                                label="Slowest request in the captured JMeter windows, on a 1 GB server (AFRAKEN)"
                             />
                             <Stat
                                 value="4.2 s → 0.8 s"
@@ -499,8 +502,12 @@ export default function AwsCommunityDayTalk() {
                             tier, so the browser-caching benefit is understated
                             here.
                         </p>
-                        <div className="grid md:grid-cols-1 gap-4">
-                            
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <Figure
+                                src={IMG.gtmetrixBaseline}
+                                alt="GTmetrix baseline, grade D"
+                                caption="Baseline: grade D, LCP 4.2 s."
+                            />
                             <Figure
                                 src={IMG.gtmetrixCdn}
                                 alt="GTmetrix with CDN, grade A"
@@ -522,7 +529,11 @@ export default function AwsCommunityDayTalk() {
                         <Table
                             head={["JMeter", "Before", "After"]}
                             rows={[
-                                ["Slowest request", "113,765 ms", "4,813 ms"],
+                                [
+                                    "Slowest request (captured window)",
+                                    "113,765 ms",
+                                    "4,813 ms",
+                                ],
                                 ["Typical request", "≈ 3,000 ms", "≈ 800 ms"],
                                 ["Highest latency", "107,811 ms", "498 ms"],
                             ]}
