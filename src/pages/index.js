@@ -15,7 +15,6 @@ const CredentialsModal = dynamic(
 // Edit these in one place.
 const THESIS =
     "Software engineer building for real constraints: low compute, scarce data, unreliable networks.";
-const AVAILABILITY = "Open to full-time roles";
 // Credentials whose title contains one of these (in this order) are shown first.
 const PINNED = ["aws community day", "open source", "azure ai"];
 
@@ -59,13 +58,6 @@ export default function Index({ products, credentials, projects }) {
                         </p>
 
                         <ul className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-3 text-sm text-gray-500">
-                            <li className="flex items-center gap-1.5 text-gray-700 font-medium">
-                                <span
-                                    className="w-2 h-2 rounded-full bg-green-500"
-                                    aria-hidden="true"
-                                />
-                                {AVAILABILITY}
-                            </li>
                             <li>Nairobi, Kenya</li>
                             <li>BSc Computer Technology, JKUAT (2026)</li>
                         </ul>
@@ -96,40 +88,33 @@ export default function Index({ products, credentials, projects }) {
                             </a>
                         </div>
 
-                        {/* Credentials: its own panel, with a real button for "view all" */}
-                        <div className="mt-6 border border-gray-200 bg-gray-50 rounded-lg p-4">
-                            <div className="flex items-center justify-between gap-3 mb-3">
-                                <span className="text-sm font-semibold text-gray-700">
-                                    Credentials
-                                </span>
-                                <button
-                                    onClick={() => setModalOpen(true)}
-                                    className="text-sm font-medium text-blue-600 bg-white border border-blue-200 hover:bg-blue-50 rounded-md px-3 py-1 transition"
+                        {/* Credentials: same rhythm as the buttons above; "View all" is the last chip */}
+                        <div className="flex flex-wrap gap-2 mt-4">
+                            {featured.map((cred) => (
+                                <a
+                                    key={cred.id}
+                                    href={cred.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-2 text-sm bg-white border border-gray-200 rounded-full pl-2 pr-3.5 py-1.5 text-gray-700 hover:border-blue-300 hover:text-blue-700 transition"
                                 >
-                                    View all {credentials.length}
-                                </button>
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                                {featured.map((cred) => (
-                                    <a
-                                        key={cred.id}
-                                        href={cred.link}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="flex items-center gap-2 text-sm bg-white border border-gray-200 rounded-full pl-2 pr-3.5 py-1.5 text-gray-700 hover:border-blue-300 hover:text-blue-700 transition"
-                                    >
-                                        <span className="relative w-5 h-5 flex-shrink-0">
-                                            <Image
-                                                src={cred.image}
-                                                alt=""
-                                                fill
-                                                className="object-contain"
-                                            />
-                                        </span>
-                                        {cred.title}
-                                    </a>
-                                ))}
-                            </div>
+                                    <span className="relative w-5 h-5 flex-shrink-0">
+                                        <Image
+                                            src={cred.image}
+                                            alt=""
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </span>
+                                    {cred.title}
+                                </a>
+                            ))}
+                            <button
+                                onClick={() => setModalOpen(true)}
+                                className="flex items-center text-sm font-medium text-blue-600 bg-white border border-blue-200 hover:bg-blue-50 rounded-full px-3.5 py-1.5 transition"
+                            >
+                                View all {credentials.length}
+                            </button>
                         </div>
                     </div>
                 </div>
