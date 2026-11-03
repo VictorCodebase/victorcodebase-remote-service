@@ -16,7 +16,7 @@ const IMG = {
     certificate: "/learn-about/aws-talk/aws-community-day-cert.png",
     misEnvelope: "/learn-about/aws-community-day/mis-climate-envelope.png",
     gtmetrixBaseline: "/learn-about/aws-community-day/gtmetrix-baseline.png",
-    gtmetrixCdn: "/learn-about/afraken/gtmetrix-report.png",
+    gtmetrixCdn: "/learn-about/aws-community-day/gtmetrix-cdn.png",
     jmeterBefore: "/learn-about/afraken/jmeter-before.png",
     jmeterAfter: "/learn-about/afraken/jmeter-after.png",
 };

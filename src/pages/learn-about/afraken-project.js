@@ -7,16 +7,16 @@ import { useState, useEffect } from "react";
 const IMG = "/learn-about/afraken";
 
 const IMAGES = {
-    hero: `${IMG}/team-photo.jpg`, // website home page screenshot
+    hero: `${IMG}/team-photo.jpg`, 
     homePage: `${IMG}/home-page.png`,
     eventsPage: `${IMG}/events-page.png`,
     inspiration: `${IMG}/aisec-inspiration.png`,
-    figma: `${IMG}/figma-mockups.png`, // Figma mockup process
-    vmStress: `${IMG}/vm-utilisation.png`, // VM at over 100% utilisation
+    figma: `${IMG}/figma-mockups.png`, 
+    vmStress: `${IMG}/vm-utilisation.png`,
     jmeterBefore: `${IMG}/jmeter-before.png`,
     jmeterAfter: `${IMG}/jmeter-after.png`,
     gtmetrix: `${IMG}/gtmetrix-report.png`,
-    team: `${IMG}/team-photo.jpg`, // team in front of JHUB / JKUAT banners
+    team: `${IMG}/team-photo.jpg`, 
     me: `${IMG}/mark.jpg`,
     awsCert: `${IMG}/aws-community-day-cert.png`,
 };
