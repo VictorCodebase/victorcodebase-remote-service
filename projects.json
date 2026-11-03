@@ -30,7 +30,7 @@
         "shortName": "Ecopulse",
         "date": "September 2024",
         "type": "Freelance",
-        "outcome": "Supporters can pay by M-Pesa, Airtel Money or card, so not owning a bank card does not stop anyone from contributing.",
+        "outcome": "Supporters can pay by M-Pesa, Airtel Money or card, better matching East African payment needs.",
         "description": "Website, shop and membership platform for an East African conservation initiative, delivered after a referral from AFRAKEN.",
         "contribution": "Chose and integrated the payment, shop and membership stack so every layer supports mobile money and the client can maintain it without a developer.",
         "tags": ["Full-stack", "Payments"],
