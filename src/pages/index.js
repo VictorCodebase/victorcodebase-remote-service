@@ -14,7 +14,7 @@ const CredentialsModal = dynamic(
 
 // Edit these in one place.
 const THESIS =
-    "Software engineer building for real constraints: low compute, scarce data, unreliable networks.";
+    "Software engineer architecting for real constraints: limited compute, scarce data, unreliable networks.";
 // Credentials whose title contains one of these (in this order) are shown first.
 const PINNED = ["aws community day", "open source", "azure ai"];
 
@@ -45,7 +45,7 @@ export default function Index({ products, credentials, projects }) {
                             alt="Mark Victor Kithinji"
                             width={80}
                             height={80}
-                            className="object-cover"
+                            className="object-fit"
                         />
                     </div>
 
