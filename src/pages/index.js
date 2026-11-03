@@ -41,7 +41,7 @@ export default function Index({ products, credentials, projects }) {
                 <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start gap-6">
                     <div className="flex-shrink-0 w-20 h-20 rounded-full border-2 border-gray-100 shadow overflow-hidden">
                         <Image
-                            src="/images/profile_1.png"
+                            src="/images/profile_2.png"
                             alt="Mark Victor Kithinji"
                             width={80}
                             height={80}
