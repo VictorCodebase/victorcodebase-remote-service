@@ -14,7 +14,7 @@ const CredentialsModal = dynamic(
 
 // Edit these in one place.
 const THESIS =
-    "Software engineer building for real constraints: low compute, scarce data, unreliable networks.";
+    "Software engineer architecting for real constraints: limited compute, scarce data, unreliable networks.";
 // Credentials whose title contains one of these (in this order) are shown first.
 const PINNED = ["aws community day", "open source", "azure ai"];
 
@@ -41,11 +41,11 @@ export default function Index({ products, credentials, projects }) {
                 <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start gap-6">
                     <div className="flex-shrink-0 w-20 h-20 rounded-full border-2 border-gray-100 shadow overflow-hidden">
                         <Image
-                            src="/images/profile_2.png"
+                            src="/images/profile_1.png"
                             alt="Mark Victor Kithinji"
                             width={80}
                             height={80}
-                            className="object-cover"
+                            className="object-fit"
                         />
                     </div>
 
