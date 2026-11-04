@@ -4,7 +4,7 @@
         "name": "AWS Community Day Speaker (Pwani edition)",
         "shortName": "aws-talk",
         "date": "July 4, 2026",
-        "type": "Speaking",
+        "type": "Community",
         "outcome": "Delivered a 30-minute session backed by measured results from two real projects.",
         "description": "“Architecting for African Realities” at AWS Community Day Kenya (Pwani edition): reliability under scarce compute, infrastructure and data.",
         "contribution": "Wrote and delivered the session, drawing on AFRAKEN and MeadowAI.",

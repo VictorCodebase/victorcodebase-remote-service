@@ -1,78 +1,97 @@
 [
-	{
-		"id": "hex-stream-terminal",
-		"name": "Custom terminal",
-		"version": "v1.0.0",
-		"description": "A fun project that takes hex stream of commands, parse and interprate them now extended to include human readable commands too with the --readable tag",
-		"status": "production",
-		"platforms": [
-			{"name": "Python Environment", "link": "https://github.com/VictorCodebase/CustomTerminal/archive/refs/heads/main.zip"}
-		],
-		"links": {
-			"documentation": "/docs/hex-stream-terminal",
-			"repository": "https://github.com/VictorCodebase/CustomTerminal"
-		},
-		"images": {
-			"logo": "/custom-terminal/360x360.png",
-			"cover": "/custom-terminal/terminal_img_banner_03.png"
-		}
-	},
-	{
-		"id": "budget-audit",
-		"name": "Budget Audit",
-		"version": "v1.1.0",
-		"description": "A budgeting platform that offers you the opportunity to keep track of your expenditure too. This should help you observe trends in your expenditure that would not have been obvious, on top of budgeting capabilities",
-		"status": "production",
-		"platforms": [
-			{ "name": "Windows", "release_date": "24 Jan 2026", "link": "https://apps.microsoft.com/detail/9PC8TC44LR2D" }
-		],
-		"links": {
-			"documentation": "/docs/budget-audit",
-			"repository": "#"
-		},
-		"images": {
-			"logo": "/images/budget-audit-logo-update.png",
-			"cover": "/images/budget-audit-cover.png"
-		}
-	},
-
-	{
-		"id": "activity-logger",
-		"name": "Daily Activity Logger",
-		"version": "v2.2.1",
-		"description": "Built to simplify daily task tracking and monthly work report generation. Originally developed during an industrial attachment to streamline workflow, it allows users to log tasks effortlessly and generate compiled reports for supervisors.",
-		"status": "released",
-		"platforms": [
-			{
-				"name": "Android",
-				"release_date": "Released",
-				"link": "https://github.com/VictorCodebase/daily-logger/releases/download/v2.2.1/application-95fcc93d-d6a3-4fc8-a698-2d08b3785991.apk"
-			}
-		],
-		"links": {
-			"documentation": "https://github.com/VictorCodebase/daily-logger/blob/main/readme.md",
-			"article": "https://www.linkedin.com/pulse/how-i-built-internal-tool-during-my-industrial-now-loves-kithinji-ieltf",
-			"repository": "https://github.com/VictorCodebase/daily-logger"
-		},
-		"images": {
-			"logo": "/images/daily-logger-logo.png",
-			"cover": "/images/daily-logger-banner.png"
-		}
-	},
-	{
-		"id": "commitment-app",
-		"name": "Commitment App",
-		"version": "1.1.0",
-		"description": "An accountability application meant to allow you to keep track of your commitments and goals better. Set recurring goals to buid habits, or morning commitments to ensure you dont lose track of what you intended to do.",
-		"status": "upcoming",
-		"platforms": [{ "name": "Android", "release_date": "14/04/2026", "link": null }],
-		"links": {
-			"documentation": "/docs/commitment-app",
-			"repository": "https://github.com/VictorCodebase/Commitment-app"
-		},
-		"images": {
-			"logo": "/commitment-app/logo.png",
-			"cover": "/commitment-app/commitment-app-banner.png"
-		}
-	}
+    {
+        "id": "hex-stream-terminal",
+        "name": "Custom terminal",
+        "version": "v1.0.0",
+        "description": "Interprets raw hex command streams, and human-readable commands with --readable, through a validated pipeline.",
+        "status": "production",
+        "tags": ["Tooling", "Protocols"],
+        "stack": ["Python"],
+        "platforms": [
+            {
+                "name": "Python Environment",
+                "link": "https://github.com/VictorCodebase/CustomTerminal/archive/refs/heads/main.zip"
+            }
+        ],
+        "links": {
+            "documentation": "/docs/hex-stream-terminal",
+            "repository": "https://github.com/VictorCodebase/CustomTerminal"
+        },
+        "images": {
+            "logo": "/custom-terminal/360x360.png",
+            "cover": "/custom-terminal/terminal_img_banner_03.png"
+        }
+    },
+    {
+        "id": "budget-audit",
+        "name": "Budget Audit",
+        "version": "v1.1.0",
+        "outcome": "Live on the Microsoft Store. Cut my own budgeting time from 3 hours to 20 minutes.",
+        "description": "Local-first budgeting app: import bank and M-Pesa statements, match vendors to budget accounts, and see spending against budget. Your data stays on your device.",
+        "status": "production",
+        "tags": ["Data", "Cross-platform"],
+        "stack": ["Flutter", "Dart", "Drift", "SQLite"],
+        "platforms": [
+            {
+                "name": "Windows",
+                "release_date": "24 Jan 2026",
+                "link": "https://apps.microsoft.com/detail/9PC8TC44LR2D"
+            }
+        ],
+        "links": {
+            "documentation": "/docs/budget-audit",
+            "repository": "#"
+        },
+        "images": {
+            "logo": "/images/budget-audit-logo-update.png",
+            "cover": "/images/budget-audit-cover.png"
+        }
+    },
+    {
+        "id": "activity-logger",
+        "name": "Daily Activity Logger",
+        "version": "v2.2.1",
+        "outcome": "Monthly report compilation fell from about 2 hours to under 30 minutes in handover testing.",
+        "description": "Offline-first Android app for daily work logs and one-tap DOCX/PDF monthly reports, built during an industrial attachment.",
+        "status": "released",
+        "tags": ["Mobile", "Offline-first"],
+        "stack": ["React Native", "Expo", "SQLite", "TypeScript"],
+        "platforms": [
+            {
+                "name": "Android",
+                "release_date": "Released",
+                "link": "https://github.com/VictorCodebase/daily-logger/releases/download/v2.2.1/application-95fcc93d-d6a3-4fc8-a698-2d08b3785991.apk"
+            }
+        ],
+        "links": {
+            "documentation": "https://github.com/VictorCodebase/daily-logger/blob/main/readme.md",
+            "article": "https://www.linkedin.com/pulse/how-i-built-internal-tool-during-my-industrial-now-loves-kithinji-ieltf",
+            "repository": "https://github.com/VictorCodebase/daily-logger"
+        },
+        "images": {
+            "logo": "/images/daily-logger-logo.png",
+            "cover": "/images/daily-logger-banner.png"
+        }
+    },
+    {
+        "id": "commitment-app",
+        "name": "Commitment App",
+        "version": "1.1.0",
+        "outcome": "Adaptive scheduling with light commitment modes keeps habits going on busy days.",
+        "description": "Track commitments and build habits with recurring goals and morning commitments.",
+        "status": "upcoming",
+        "tags": ["Mobile", "Habits"],
+        "stack": ["React Native", "Expo", "SQLite"],
+        "platforms": [
+            { "name": "Android", "release_date": "14/04/2026", "link": null }
+        ],
+        "links": {
+            "documentation": "/docs/commitment-app",
+            "repository": "https://github.com/VictorCodebase/Commitment-app"
+        },
+        "images": {
+            "logo": "/commitment-app/logo.png",
+            "cover": "/commitment-app/commitment-app-banner.png"
+        }
+    }
 ]
