@@ -13,8 +13,7 @@ const CredentialsModal = dynamic(
 );
 
 // Edit these in one place.
-const THESIS =
-    "Software engineer architecting for real constraints: limited compute, scarce data, unreliable networks.";
+const THESIS = "Who’s using it? On what device? Over what network?";
 // Credentials whose title contains one of these (in this order) are shown first.
 const PINNED = ["aws community day", "open source", "azure ai"];
 
@@ -59,6 +58,7 @@ export default function Index({ products, credentials, projects }) {
 
                         <ul className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-3 text-sm text-gray-500">
                             <li>Nairobi, Kenya</li>
+                            <li>Software Engineer</li>
                             <li>BSc Computer Technology, JKUAT (2026)</li>
                         </ul>
 
